@@ -4,7 +4,7 @@ An incremental Go implementation of the terminal tool described in the accompany
 
 ## Run one request
 
-Requires Go 1.24 or newer.
+Requires Go 1.27.2 or newer.
 
 ```sh
 go run ./cmd/httpload -url http://localhost:8080/health
@@ -18,8 +18,14 @@ Only send requests to systems you control or have permission to test.
 ## Development
 
 ```sh
-go test ./...
-go test -race ./...
+make run ARGS='-url http://localhost:8080/health'
+make test
+make test-race
+make vet
+make check
+make build
 ```
+
+`make run` passes `ARGS` to the CLI. `make check` runs tests, race tests, and `go vet`. `make build` writes `bin/httpload`.
 
 The request execution package lives in `internal/request`. It owns configuration validation and a reusable `http.Client`; future scheduling strategies can call `Generator.Send` without changing HTTP execution or result format. Progress and decisions are recorded in [DEVELOPMENT_DIARY.md](DEVELOPMENT_DIARY.md).

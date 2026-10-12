@@ -1,5 +1,3 @@
-// Package request executes one configured HTTP request at a time.
-// Scheduling and aggregation belong to later layers of the application.
 package request
 
 import (
@@ -14,8 +12,6 @@ import (
 	"time"
 )
 
-// Config describes the HTTP request to send. A Generator takes its own copy
-// of Header and Body, so callers may reuse or change their Config afterward.
 type Config struct {
 	URL     string
 	Method  string
@@ -24,8 +20,6 @@ type Config struct {
 	Timeout time.Duration
 }
 
-// ErrorKind identifies which part of a request failed. An HTTP error status
-// is still a completed response and leaves ErrorKind empty.
 type ErrorKind string
 
 const (
@@ -36,8 +30,6 @@ const (
 	ErrorResponseBody ErrorKind = "response_body"
 )
 
-// Result describes one attempt. Duration includes reading the entire response
-// body, because that is when the request has actually finished.
 type Result struct {
 	StatusCode int
 	Duration   time.Duration
@@ -46,8 +38,6 @@ type Result struct {
 	Err        error
 }
 
-// Generator owns a reusable HTTP client and an immutable request definition.
-// Send is safe to call from multiple goroutines when later phases need it.
 type Generator struct {
 	url    string
 	method string
@@ -56,7 +46,6 @@ type Generator struct {
 	client *http.Client
 }
 
-// NewGenerator validates the request before any network activity occurs.
 func NewGenerator(cfg Config) (*Generator, error) {
 	if cfg.Timeout <= 0 {
 		return nil, errors.New("timeout must be greater than zero")
@@ -84,8 +73,6 @@ func NewGenerator(cfg Config) (*Generator, error) {
 	}, nil
 }
 
-// Send makes one request. Each call gets a fresh body reader, so the same
-// Generator can be used for repeated requests.
 func (g *Generator) Send(ctx context.Context) Result {
 	start := time.Now()
 	req, err := http.NewRequestWithContext(ctx, g.method, g.url, bytes.NewReader(g.body))
