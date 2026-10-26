@@ -85,6 +85,13 @@ func NewRunner(cfg Config, sender Sender) (*Runner, error) {
 }
 
 func (r *Runner) Run(ctx context.Context) (Summary, error) {
+	return r.RunWithProgress(ctx, 0, nil)
+}
+
+// RunWithProgress is Run with a snapshot of the summary passed to progress
+// every interval. Snapshots are taken by the collector goroutine, so progress
+// must return quickly and must not keep references to the summary fields.
+func (r *Runner) RunWithProgress(ctx context.Context, interval time.Duration, progress func(Summary)) (Summary, error) {
 	start := time.Now()
 	runCtx := ctx
 	if r.cfg.Duration > 0 {
@@ -93,12 +100,27 @@ func (r *Runner) Run(ctx context.Context) (Summary, error) {
 		defer cancel()
 	}
 
-	results := newCollector()
-	// Drain every started request, including failures returned during cancellation.
-	for item := range r.execute(runCtx, r.sender, r.cfg) {
-		results.record(item)
+	var tick <-chan time.Time
+	if progress != nil && interval > 0 {
+		ticker := time.NewTicker(interval)
+		defer ticker.Stop()
+		tick = ticker.C
 	}
-	return results.result(time.Since(start)), ctx.Err()
+
+	results := newCollector()
+	output := r.execute(runCtx, r.sender, r.cfg)
+	// Drain every started request, including failures returned during cancellation.
+	for {
+		select {
+		case item, ok := <-output:
+			if !ok {
+				return results.result(time.Since(start)), ctx.Err()
+			}
+			results.record(item)
+		case <-tick:
+			progress(results.result(time.Since(start)))
+		}
+	}
 }
 
 // observe is a variable so benchmarks can simulate a heavier processing stage.

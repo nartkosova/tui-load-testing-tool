@@ -290,3 +290,35 @@ func TestNewRunnerRejectsInvalidConfiguration(t *testing.T) {
 		t.Error("accepted nil sender")
 	}
 }
+
+func TestRunWithProgressReportsSnapshots(t *testing.T) {
+	release := make(chan struct{})
+	runner := newTestRunner(t, Config{Pattern: WorkerPool, Concurrency: 2, Requests: 4}, senderFunc(func(context.Context) request.Result {
+		<-release
+		return request.Result{StatusCode: 200, Duration: time.Millisecond}
+	}))
+	snapshots := make(chan Summary, 100)
+	done := make(chan runResult, 1)
+	go func() {
+		summary, err := runner.RunWithProgress(context.Background(), time.Millisecond, func(s Summary) {
+			select {
+			case snapshots <- s:
+			default:
+			}
+		})
+		done <- runResult{summary, err}
+	}()
+	select {
+	case s := <-snapshots:
+		if s.Requests != 0 || s.Duration <= 0 {
+			t.Fatalf("unexpected snapshot before release: %+v", s)
+		}
+	case <-time.After(3 * time.Second):
+		t.Fatal("no progress snapshot")
+	}
+	close(release)
+	result := awaitRun(t, done)
+	if result.err != nil || result.summary.Requests != 4 || result.summary.SuccessLatency.Count != 4 {
+		t.Fatalf("unexpected run: %+v, %v", result.summary, result.err)
+	}
+}

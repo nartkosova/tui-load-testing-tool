@@ -16,6 +16,7 @@ const (
 	LatencyLowest            = int64(1)
 	LatencyHighest           = int64(10 * time.Minute / LatencyUnit)
 	LatencySignificantDigits = 3
+	LatencyBuckets           = 16
 )
 
 // LatencyStats summarizes one latency distribution. When Count is zero the
@@ -29,6 +30,15 @@ type LatencyStats struct {
 	P95      time.Duration
 	P99      time.Duration
 	Max      time.Duration
+	// Buckets splits Min..P99 into LatencyBuckets equal ranges for display.
+	// Samples above P99 are counted in the last bucket.
+	Buckets []LatencyBucket
+}
+
+type LatencyBucket struct {
+	From  time.Duration
+	To    time.Duration
+	Count int64
 }
 
 func (s LatencyStats) Available() bool {
@@ -65,7 +75,25 @@ func (r *latencyRecorder) stats() LatencyStats {
 	stats.P95 = value(h.ValueAtQuantile(95))
 	stats.P99 = value(h.ValueAtQuantile(99))
 	stats.Max = value(h.Max())
+	stats.Buckets = buckets(h, stats.Min, stats.P99)
 	return stats
+}
+
+func buckets(h *hdrhistogram.Histogram, low, high time.Duration) []LatencyBucket {
+	width := max((high-low)/LatencyBuckets, LatencyUnit)
+	result := make([]LatencyBucket, LatencyBuckets)
+	for i := range result {
+		result[i].From = low + time.Duration(i)*width
+		result[i].To = result[i].From + width
+	}
+	for _, bar := range h.Distribution() {
+		if bar.Count == 0 {
+			continue
+		}
+		i := int((time.Duration(bar.From)*LatencyUnit - low) / width)
+		result[max(0, min(i, LatencyBuckets-1))].Count += bar.Count
+	}
+	return result
 }
 
 // collector aggregates the observations delivered by every concurrency pattern.

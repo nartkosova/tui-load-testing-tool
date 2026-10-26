@@ -83,6 +83,28 @@ func TestLatencySingleObservation(t *testing.T) {
 	}
 }
 
+func TestLatencyBucketsCoverAllSamples(t *testing.T) {
+	r := newLatencyRecorder()
+	for i := range 1000 {
+		r.record(time.Duration(1+i%100) * time.Millisecond)
+	}
+	r.record(5 * time.Second)
+	stats := r.stats()
+	if len(stats.Buckets) != LatencyBuckets {
+		t.Fatalf("got %d buckets", len(stats.Buckets))
+	}
+	var total int64
+	for i, b := range stats.Buckets {
+		total += b.Count
+		if b.To <= b.From || (i > 0 && b.From != stats.Buckets[i-1].To) {
+			t.Fatalf("bucket %d has invalid range %s-%s", i, b.From, b.To)
+		}
+	}
+	if total != stats.Count || stats.Buckets[0].From != stats.Min || stats.Buckets[LatencyBuckets-1].Count < 10 {
+		t.Fatalf("total=%d count=%d first=%s min=%s last=%d", total, stats.Count, stats.Buckets[0].From, stats.Min, stats.Buckets[LatencyBuckets-1].Count)
+	}
+}
+
 func TestLatencyRejectsValuesOutsideRange(t *testing.T) {
 	r := newLatencyRecorder()
 	highest := time.Duration(LatencyHighest) * LatencyUnit

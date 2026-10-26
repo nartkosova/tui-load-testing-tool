@@ -14,6 +14,7 @@ import (
 
 	"github.com/nartkosova/tui-load-testing-tool/internal/load"
 	"github.com/nartkosova/tui-load-testing-tool/internal/request"
+	"github.com/nartkosova/tui-load-testing-tool/internal/tui"
 )
 
 type headersFlag http.Header
@@ -42,6 +43,7 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 	var target, method, body, pattern string
 	var timeout, duration time.Duration
 	var concurrency int
+	var interactive bool
 	var requests int64
 	var headers = make(headersFlag)
 	flags := flag.NewFlagSet("httpload", flag.ContinueOnError)
@@ -55,6 +57,7 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 	flags.StringVar(&pattern, "pattern", string(load.WorkerPool), "concurrency pattern: worker-pool, fan-out-fan-in, pipeline")
 	flags.IntVar(&concurrency, "concurrency", 1, "maximum simultaneous requests")
 	flags.Int64Var(&requests, "requests", 1, "request count (0 requires a duration)")
+	flags.BoolVar(&interactive, "tui", false, "open the interactive terminal UI (flags prefill the form)")
 	flags.DurationVar(&duration, "duration", 0, "load test duration (also limits an explicit request count)")
 	if err := flags.Parse(args); err != nil {
 		if err == flag.ErrHelp {
@@ -65,6 +68,13 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 	if flags.NArg() != 0 {
 		fmt.Fprintln(stderr, "unexpected positional arguments")
 		return 2
+	}
+
+	if interactive {
+		return runInteractive(ctx, flags, tui.Settings{
+			URL: target, Method: method, Pattern: pattern, Concurrency: concurrency,
+			Requests: requests, Duration: duration, Timeout: timeout,
+		}, http.Header(headers), []byte(body), stdout, stderr)
 	}
 
 	if target == "" {
@@ -122,6 +132,43 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 		return 1
 	}
 	fmt.Fprintf(stdout, "status: %d\nduration: %s\nresponse bytes: %d\n", result.StatusCode, result.Duration, result.BytesRead)
+	return 0
+}
+
+func runInteractive(ctx context.Context, flags *flag.FlagSet, initial tui.Settings, header http.Header, body []byte, stdout, stderr io.Writer) int {
+	explicitRequests := false
+	flags.Visit(func(f *flag.Flag) { explicitRequests = explicitRequests || f.Name == "requests" })
+	if !explicitRequests {
+		initial.Requests = 0
+		if initial.Duration == 0 {
+			initial.Duration = 10 * time.Second
+		}
+	}
+	result, err := tui.Run(ctx, initial, func(s tui.Settings) (*load.Runner, error) {
+		generator, err := request.NewGenerator(request.Config{
+			URL: s.URL, Method: s.Method, Header: header, Body: body, Timeout: s.Timeout,
+		})
+		if err != nil {
+			return nil, err
+		}
+		return load.NewRunner(load.Config{
+			Pattern: load.Pattern(s.Pattern), Concurrency: s.Concurrency,
+			Requests: s.Requests, Duration: s.Duration,
+		}, generator)
+	})
+	if err != nil {
+		fmt.Fprintln(stderr, err)
+		return 1
+	}
+	if !result.Ran {
+		return 0
+	}
+	fmt.Fprintf(stdout, "url: %s\n", result.Settings.URL)
+	printSummary(stdout, result.Settings.Pattern, result.Settings.Concurrency, result.Summary)
+	if result.Err != nil {
+		fmt.Fprintf(stderr, "load test stopped: %v\n", result.Err)
+		return 1
+	}
 	return 0
 }
 

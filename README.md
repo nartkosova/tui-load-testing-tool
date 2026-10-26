@@ -1,6 +1,6 @@
 # HTTP load testing and uptime monitoring tool
 
-An incremental Go implementation of the terminal tool described in the accompanying thesis project. It supports individual HTTP requests and concurrent load generation using three interchangeable concurrency patterns. Streaming latency metrics, the TUI, uptime monitoring, and persistence are future phases.
+An incremental Go implementation of the terminal tool described in the accompanying thesis project. It supports individual HTTP requests and concurrent load generation using three interchangeable concurrency patterns. It reports throughput, error rates and HDR-histogram latency percentiles, and can show a live terminal dashboard. Uptime monitoring and persistence are future phases.
 
 ## Run one request
 
@@ -37,6 +37,19 @@ Ctrl+C or SIGTERM stops scheduling and cancels active HTTP requests. Duration ex
 
 The final summary reports attempted requests, fully consumed responses, execution errors, HTTP error statuses (400 and above), cancellations, elapsed time, attempted requests per second, and response bytes. HTTP error statuses also count as completed responses when their bodies are read successfully. Execution errors include network, timeout, cancellation, and body-read failures. The HTTP error count includes any received error status, even if the body subsequently fails. Cancellations are the subset classified as `canceled`; requests interrupted by the duration deadline are classified as timeouts and included in execution errors. Elapsed time includes shutdown and result collection.
 
+The summary also reports error rates and latency distributions (min, average, p50, p95, p99, max) for successful responses, HTTP error responses and execution failures, recorded in HDR histograms with a 1µs–10min range and three significant digits.
+
+## Interactive terminal UI
+
+```sh
+go run ./cmd/httpload -tui
+go run ./cmd/httpload -tui -url http://localhost:8080/health -pattern pipeline -concurrency 50
+```
+
+`-tui` opens a configuration form (URL, method, pattern, workers, requests, duration, timeout); any flags prefill it, and headers and body are taken from flags. Without `-requests` the form starts with no request limit and a 10s duration. Use ↑/↓ to move, ←/→ to change options and Enter to start; invalid values are shown under the form.
+
+While a test runs, the dashboard shows request packets flowing to the server (red for errors), a progress bar, a requests-per-second sparkline, result counts, live latency percentiles and a latency histogram (16 buckets from min to p99). `q` or Ctrl+C stops the test early. Afterwards `r` returns to the form for another run and `q` exits, printing the summary of the last test.
+
 A completed load run exits with code `0`, including when individual requests fail; inspect the summary for those failures. External cancellation exits with code `1` after printing the partial summary. Invalid arguments exit with code `2`. Single-request mode retains its original output and exits with code `1` for an execution error.
 
 ## Development
@@ -52,4 +65,4 @@ make build
 
 `make run` passes `ARGS` to the CLI. `make check` runs tests, race tests, and `go vet`. `make build` writes `bin/httpload`.
 
-The request execution package lives in `internal/request`. It owns configuration validation and a reusable `http.Client`. `internal/load` selects a concurrency strategy through `NewRunner` and calls the shared `Sender` interface (`Generator.Send`), then aggregates results in one goroutine. `Runner.Run` returns a summary and an error for external cancellation; reaching the configured duration is normal completion. Progress and decisions are recorded in [DEVELOPMENT_DIARY.md](DEVELOPMENT_DIARY.md).
+The request execution package lives in `internal/request`. It owns configuration validation and a reusable `http.Client`. `internal/load` selects a concurrency strategy through `NewRunner` and calls the shared `Sender` interface (`Generator.Send`), then aggregates results in one goroutine. `internal/tui` renders the dashboard with Bubble Tea from snapshots produced by `Runner.RunWithProgress`. `Runner.Run` returns a summary and an error for external cancellation; reaching the configured duration is normal completion. Progress and decisions are recorded in [DEVELOPMENT_DIARY.md](DEVELOPMENT_DIARY.md).

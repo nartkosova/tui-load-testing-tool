@@ -98,3 +98,18 @@
   This is the first clear difference: the pipeline runs processing in a single goroutine, so throughput is capped at 1/cost (≈9,900 req/s at 100µs), while worker-pool and fan-out-fan-in process inside the 100 workers in parallel. This confirms the bottleneck predicted in the pipeline design. (Busy-work at 100µs was slightly faster than 0 for the parallel patterns, probably because spinning workers avoid sleep/wake-up scheduling; not investigated.)
 - **Conclusion so far:** for plain HTTP load the pattern does not affect throughput, latency, CPU, or memory measurably; the pipeline only becomes a bottleneck when result processing is expensive, unless that stage is parallelized.
 - Run with: `make build`, `go run ./bench/server &`, `python3 bench/compare.py ./bin/httpload http://127.0.0.1:8099/fast 50000 10 10,100,500,1000`, and `go test -run XXX -bench Pattern -count 5 ./internal/load`.
+
+## 2026-10-26 — Terminal user interface
+
+- Added a live dashboard (`internal/tui`, Bubble Tea + Lip Gloss) behind the `-tui` flag. It shows the pattern and target, an animated lane of request packets (more packets at higher throughput, red in proportion to the error share), a progress bar for request count or duration, a req/s sparkline, result counts and live p50/p95/p99/max. A short confetti animation plays when the test finishes.
+- Added `Runner.RunWithProgress`, which passes a summary snapshot every 100ms. Snapshots are taken by the collector goroutine itself, so the histograms still have a single owner and need no locking. The dashboard smooths the rate between snapshots.
+- `q`/Ctrl+C during a test cancels it and keeps the partial result; after the test `q` exits and the normal text summary is printed so results stay in the terminal history.
+- Verified with model tests (progress, final state, cancel on quit, packets stay inside the lane), a progress snapshot test, race detection, and real runs in a pseudo-terminal against `bench/server`, including Ctrl+C.
+
+## 2026-10-26 — Interactive configuration and latency histogram
+
+- `-tui` now opens a configuration form (URL, method, pattern, workers, requests, duration, timeout) prefilled from flags. Arrow keys move and change options, Enter starts, and parse or validation errors (from the same `NewGenerator`/`NewRunner` checks as the CLI) are shown under the form. After a test, `r` returns to the form for another run; on exit the last summary is printed.
+- Added a latency histogram to the dashboard. `LatencyStats.Buckets` splits min..p99 into 16 equal ranges from the HDR histogram, with the tail above p99 counted in the last bucket so a few slow requests don't flatten the chart. Bars use eighth-block characters for smoother heights.
+- Computing buckets raised the summary snapshot cost from ~0.25ms to ~0.73ms and ~1.1 MB of short-lived allocations (`Histogram.Distribution`). At 10 snapshots per second that is acceptable, but it is the first thing to optimize if the dashboard affects measurements.
+- The runner now runs in a background goroutine that sends progress over a channel; snapshots are dropped while the UI is busy, the final summary never is.
+- Verified with model tests (form editing, validation errors, a full form → run → results → form cycle, histogram rendering, cancel on quit), bucket coverage tests, race detection, and a scripted pseudo-terminal session against `bench/server`.
