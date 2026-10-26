@@ -45,7 +45,7 @@ func TestLoadPatternsCLI(t *testing.T) {
 			if code != 0 || stderr.Len() != 0 || calls.Load() != 9 {
 				t.Fatalf("code=%d calls=%d stdout=%q stderr=%q", code, calls.Load(), stdout.String(), stderr.String())
 			}
-			for _, want := range []string{"pattern: " + pattern + "\n", "concurrency: 3\n", "requests: 9\n", "responses: 9\n", "errors: 0\n", "HTTP errors: 9\n", "response bytes: 27\n"} {
+			for _, want := range []string{"pattern: " + pattern + "\n", "concurrency: 3\n", "requests: 9\n", "responses: 9\n", "errors: 0\n", "HTTP errors: 9\n", "response bytes: 27\n", "error rate: 0.00%\n", "HTTP error rate: 100.00%\n", "HTTP error latency: samples=9 rejected=0", "success latency: unavailable (samples: 0, rejected: 0)\n"} {
 				if !strings.Contains(stdout.String(), want) {
 					t.Errorf("output %q missing %q", stdout.String(), want)
 				}

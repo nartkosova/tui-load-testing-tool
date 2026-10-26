@@ -108,9 +108,7 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 			return 2
 		}
 		summary, err := runner.Run(ctx)
-		fmt.Fprintf(stdout, "pattern: %s\nconcurrency: %d\nrequests: %d\nresponses: %d\nerrors: %d\nHTTP errors: %d\ncanceled: %d\nduration: %s\nrequests/sec: %.2f\nresponse bytes: %d\n",
-			pattern, concurrency, summary.Requests, summary.Responses, summary.Errors, summary.HTTPErrors,
-			summary.Canceled, summary.Duration, float64(summary.Requests)/summary.Duration.Seconds(), summary.BytesRead)
+		printSummary(stdout, pattern, concurrency, summary)
 		if err != nil {
 			fmt.Fprintf(stderr, "load test stopped: %v\n", err)
 			return 1
@@ -125,4 +123,40 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 	}
 	fmt.Fprintf(stdout, "status: %d\nduration: %s\nresponse bytes: %d\n", result.StatusCode, result.Duration, result.BytesRead)
 	return 0
+}
+
+func printSummary(w io.Writer, pattern string, concurrency int, summary load.Summary) {
+	fmt.Fprintf(w, "pattern: %s\nconcurrency: %d\nrequests: %d\nresponses: %d\nerrors: %d\nHTTP errors: %d\ncanceled: %d\nduration: %s\n",
+		pattern, concurrency, summary.Requests, summary.Responses, summary.Errors, summary.HTTPErrors,
+		summary.Canceled, summary.Duration)
+	fmt.Fprintf(w, "requests/sec: %s\n", formatValue(summary.RequestRate()))
+	fmt.Fprintf(w, "error rate: %s\n", formatPercent(summary.ErrorRate()))
+	fmt.Fprintf(w, "HTTP error rate: %s\n", formatPercent(summary.HTTPErrorRate()))
+	fmt.Fprintf(w, "response bytes: %d\n", summary.BytesRead)
+	printLatency(w, "success latency", summary.SuccessLatency)
+	printLatency(w, "HTTP error latency", summary.HTTPErrorLatency)
+	printLatency(w, "failure latency", summary.FailureLatency)
+}
+
+func printLatency(w io.Writer, name string, stats load.LatencyStats) {
+	if !stats.Available() {
+		fmt.Fprintf(w, "%s: unavailable (samples: 0, rejected: %d)\n", name, stats.Rejected)
+		return
+	}
+	fmt.Fprintf(w, "%s: samples=%d rejected=%d min=%s avg=%s p50=%s p95=%s p99=%s max=%s\n",
+		name, stats.Count, stats.Rejected, stats.Min, stats.Mean, stats.P50, stats.P95, stats.P99, stats.Max)
+}
+
+func formatValue(value float64, ok bool) string {
+	if !ok {
+		return "unavailable"
+	}
+	return fmt.Sprintf("%.2f", value)
+}
+
+func formatPercent(value float64, ok bool) string {
+	if !ok {
+		return "unavailable"
+	}
+	return fmt.Sprintf("%.2f%%", value)
 }

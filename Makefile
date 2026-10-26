@@ -1,6 +1,6 @@
 GO ?= go
 
-.PHONY: run test test-race vet fmt check build
+.PHONY: run test test-race vet fmt check build bench
 
 run:
 	$(GO) run ./cmd/httpload $(ARGS)
@@ -21,3 +21,6 @@ check: test test-race vet
 
 build:
 	$(GO) build -o bin/httpload ./cmd/httpload
+
+bench:
+	$(GO) test -run XXX -bench . -benchmem ./...

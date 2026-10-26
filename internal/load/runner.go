@@ -38,6 +38,10 @@ type Summary struct {
 	Canceled   int64
 	BytesRead  int64
 	Duration   time.Duration
+
+	SuccessLatency   LatencyStats
+	HTTPErrorLatency LatencyStats
+	FailureLatency   LatencyStats
 }
 
 type observation struct {
@@ -89,28 +93,18 @@ func (r *Runner) Run(ctx context.Context) (Summary, error) {
 		defer cancel()
 	}
 
-	var summary Summary
+	results := newCollector()
 	// Drain every started request, including failures returned during cancellation.
 	for item := range r.execute(runCtx, r.sender, r.cfg) {
-		summary.Requests++
-		summary.BytesRead += item.result.BytesRead
-		if item.result.Err != nil {
-			summary.Errors++
-		} else {
-			summary.Responses++
-		}
-		if item.httpError {
-			summary.HTTPErrors++
-		}
-		if item.result.ErrorKind == request.ErrorCanceled {
-			summary.Canceled++
-		}
+		results.record(item)
 	}
-	summary.Duration = time.Since(start)
-	return summary, ctx.Err()
+	return results.result(time.Since(start)), ctx.Err()
 }
 
-func observe(result request.Result) observation {
+// observe is a variable so benchmarks can simulate a heavier processing stage.
+var observe = classify
+
+func classify(result request.Result) observation {
 	return observation{result: result, httpError: result.StatusCode >= 400}
 }
 
