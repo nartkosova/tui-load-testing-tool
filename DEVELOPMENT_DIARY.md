@@ -113,3 +113,14 @@
 - Computing buckets raised the summary snapshot cost from ~0.25ms to ~0.73ms and ~1.1 MB of short-lived allocations (`Histogram.Distribution`). At 10 snapshots per second that is acceptable, but it is the first thing to optimize if the dashboard affects measurements.
 - The runner now runs in a background goroutine that sends progress over a channel; snapshots are dropped while the UI is busy, the final summary never is.
 - Verified with model tests (form editing, validation errors, a full form → run → results → form cycle, histogram rendering, cancel on quit), bucket coverage tests, race detection, and a scripted pseudo-terminal session against `bench/server`.
+
+## 2026-10-27 — Uptime monitoring
+
+- Added `httpload monitor` (`internal/monitor`), which reuses `request.Generator` but not the load runner: load testing maximises throughput, monitoring sends one request per interval for a long time and cares about state over time.
+- Scheduling: one goroutine per target with its own ticker and a random start offset (≤ interval/10) so equal intervals do not align; slow checks drop ticks instead of overlapping. Checks fan in to one channel; a single goroutine owns all trackers, so like the load collector it needs no locks. Checks interrupted by shutdown are discarded instead of counted as failures.
+- State machine UNKNOWN → UP/DEGRADED/DOWN. DOWN requires `fail_threshold` consecutive failures (default 2) to avoid flapping; one success recovers. Detection time is therefore roughly offset + threshold × interval (+ timeout) — to be measured.
+- Uptime is time-based rather than check-based: incidents start at the first failed check of the confirming streak and end at the recovering check, and uptime = (observed time − incident time) / observed time over 1h, 24h and the full run. Failures below the threshold do not count as downtime, which is a deliberate trade-off to discuss.
+- Latency drift: fast (α 0.3) vs slow (α 0.02) EWMA of successful check latency, shown as a ratio. Cheap and constant memory; a windowed p95 comparison can replace it once checks are stored in SQLite.
+- Targets come from repeated `-url` flags or a JSON file with `${VAR}` expansion for credentials (unset variables fail at startup). A defaulted timeout is capped at the target's interval.
+- TUI: target table (state, 1h/24h uptime, last latency, recent-check sparkline with failures as red crosses) and a detail view with drift and incidents. Updates from the monitor block instead of being dropped, unlike load-test progress, because a missed state change would be wrong.
+- Verified with deterministic tracker tests (transitions, incident times, windowed uptime, drift), scheduler tests with fake senders (threshold, cancellation), CLI tests against an `httptest` server with an injected outage, a TUI model test, race detection, and a pseudo-terminal run against `bench/server` plus a closed port.

@@ -40,6 +40,9 @@ func main() {
 }
 
 func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
+	if len(args) > 0 && args[0] == "monitor" {
+		return runMonitor(ctx, args[1:], stdout, stderr)
+	}
 	var target, method, body, pattern string
 	var timeout, duration time.Duration
 	var concurrency int
