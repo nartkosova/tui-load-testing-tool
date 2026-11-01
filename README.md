@@ -1,6 +1,6 @@
 # HTTP load testing and uptime monitoring tool
 
-An incremental Go implementation of the terminal tool described in the accompanying thesis project. It supports individual HTTP requests and concurrent load generation using three interchangeable concurrency patterns. It reports throughput, error rates and HDR-histogram latency percentiles, and can show a live terminal dashboard. It also monitors endpoint uptime on a fixed interval, headless or in the terminal UI. Persistence is a future phase.
+An incremental Go implementation of the terminal tool described in the accompanying thesis project. It supports individual HTTP requests and concurrent load generation using three interchangeable concurrency patterns. It reports throughput, error rates and HDR-histogram latency percentiles, and can show a live terminal dashboard. It also monitors endpoint uptime on a fixed interval, headless or in the terminal UI. Results can be stored in SQLite.
 
 ## Run one request
 
@@ -67,7 +67,7 @@ Uptime is time-based: the share of observed time (since the first check) not spe
 
 Without `-tui` the monitor logs state changes (every check with `-v`) and prints a summary per target on Ctrl+C. With `-tui` it shows a table of targets with state, uptime, last latency and recent checks (red crosses for failures); Enter opens details with drift and incidents.
 
-Flags: `-url` (repeatable), `-config`, `-method`, `-header`, `-interval` (default 30s), `-timeout` (default 10s, capped at the interval), `-fail-threshold`, `-degraded`, `-tui`, `-v`. Flags are defaults for targets in the configuration file:
+Flags: `-url` (repeatable), `-config`, `-method`, `-header`, `-interval` (default 30s), `-timeout` (default 10s, capped at the interval), `-fail-threshold`, `-degraded`, `-db`, `-tui`, `-v`. Flags are defaults for targets in the configuration file:
 
 ```json
 {
@@ -80,6 +80,15 @@ Flags: `-url` (repeatable), `-config`, `-method`, `-header`, `-interval` (defaul
 ```
 
 `${VAR}` in URLs and header values is read from the environment so credentials stay out of the file; an unset variable is an error at startup.
+
+## Storing results
+
+```sh
+go run ./cmd/httpload -url http://localhost:8080/health -requests 1000 -concurrency 10 -db results.db
+go run ./cmd/httpload monitor -url http://localhost:8080/health -db results.db
+```
+
+`-db` writes to an SQLite file (created if missing). Load tests store one row in `load_runs` with counts, duration and success latency p50/p95/p99/max; with `-tui` the last run is stored on exit. The monitor stores every check in `checks` and each outage in `incidents` (`end` is NULL while open). Times are Unix nanoseconds and durations nanoseconds. Monitoring state still starts empty on each run; the database is a record for later analysis, e.g. with the `sqlite3` CLI. A storage error is printed but does not stop the test or monitor.
 
 ## Development
 

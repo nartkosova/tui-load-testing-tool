@@ -14,6 +14,7 @@ import (
 
 	"github.com/nartkosova/tui-load-testing-tool/internal/load"
 	"github.com/nartkosova/tui-load-testing-tool/internal/request"
+	"github.com/nartkosova/tui-load-testing-tool/internal/store"
 	"github.com/nartkosova/tui-load-testing-tool/internal/tui"
 )
 
@@ -43,7 +44,7 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 	if len(args) > 0 && args[0] == "monitor" {
 		return runMonitor(ctx, args[1:], stdout, stderr)
 	}
-	var target, method, body, pattern string
+	var target, method, body, pattern, dbPath string
 	var timeout, duration time.Duration
 	var concurrency int
 	var interactive bool
@@ -61,6 +62,7 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 	flags.IntVar(&concurrency, "concurrency", 1, "maximum simultaneous requests")
 	flags.Int64Var(&requests, "requests", 1, "request count (0 requires a duration)")
 	flags.BoolVar(&interactive, "tui", false, "open the interactive terminal UI (flags prefill the form)")
+	flags.StringVar(&dbPath, "db", "", "SQLite file to store the load test summary in")
 	flags.DurationVar(&duration, "duration", 0, "load test duration (also limits an explicit request count)")
 	if err := flags.Parse(args); err != nil {
 		if err == flag.ErrHelp {
@@ -77,7 +79,7 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 		return runInteractive(ctx, flags, tui.Settings{
 			URL: target, Method: method, Pattern: pattern, Concurrency: concurrency,
 			Requests: requests, Duration: duration, Timeout: timeout,
-		}, http.Header(headers), []byte(body), stdout, stderr)
+		}, http.Header(headers), []byte(body), dbPath, stdout, stderr)
 	}
 
 	if target == "" {
@@ -120,8 +122,10 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 			fmt.Fprintln(stderr, err)
 			return 2
 		}
+		started := time.Now()
 		summary, err := runner.Run(ctx)
 		printSummary(stdout, pattern, concurrency, summary)
+		saveRun(dbPath, started, target, pattern, concurrency, summary, stderr)
 		if err != nil {
 			fmt.Fprintf(stderr, "load test stopped: %v\n", err)
 			return 1
@@ -138,7 +142,7 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) int {
 	return 0
 }
 
-func runInteractive(ctx context.Context, flags *flag.FlagSet, initial tui.Settings, header http.Header, body []byte, stdout, stderr io.Writer) int {
+func runInteractive(ctx context.Context, flags *flag.FlagSet, initial tui.Settings, header http.Header, body []byte, dbPath string, stdout, stderr io.Writer) int {
 	explicitRequests := false
 	flags.Visit(func(f *flag.Flag) { explicitRequests = explicitRequests || f.Name == "requests" })
 	if !explicitRequests {
@@ -168,11 +172,29 @@ func runInteractive(ctx context.Context, flags *flag.FlagSet, initial tui.Settin
 	}
 	fmt.Fprintf(stdout, "url: %s\n", result.Settings.URL)
 	printSummary(stdout, result.Settings.Pattern, result.Settings.Concurrency, result.Summary)
+	saveRun(dbPath, time.Now().Add(-result.Summary.Duration), result.Settings.URL, result.Settings.Pattern,
+		result.Settings.Concurrency, result.Summary, stderr)
 	if result.Err != nil {
 		fmt.Fprintf(stderr, "load test stopped: %v\n", result.Err)
 		return 1
 	}
 	return 0
+}
+
+// saveRun stores a load test summary when -db is set. A storage failure is
+// reported but does not change the exit code, since the test itself ran.
+func saveRun(path string, at time.Time, url, pattern string, concurrency int, summary load.Summary, stderr io.Writer) {
+	if path == "" {
+		return
+	}
+	db, err := store.Open(path)
+	if err == nil {
+		err = db.RecordLoadRun(at, url, pattern, concurrency, summary)
+		db.Close()
+	}
+	if err != nil {
+		fmt.Fprintf(stderr, "store: %v\n", err)
+	}
 }
 
 func printSummary(w io.Writer, pattern string, concurrency int, summary load.Summary) {

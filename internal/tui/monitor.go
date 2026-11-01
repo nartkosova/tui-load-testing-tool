@@ -44,8 +44,8 @@ type monitorModel struct {
 // RunMonitor shows the live state of every target until q or Ctrl+C and
 // returns the final statuses. The monitor keeps running while the UI is
 // busy; updates wait for the UI instead of being dropped, so no state
-// change is missed.
-func RunMonitor(ctx context.Context, m *monitor.Monitor) ([]monitor.Status, error) {
+// change is missed. record, if set, is called with every update first.
+func RunMonitor(ctx context.Context, m *monitor.Monitor, record func(monitor.Update)) ([]monitor.Status, error) {
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
 	targets := m.Targets()
@@ -59,6 +59,9 @@ func RunMonitor(ctx context.Context, m *monitor.Monitor) ([]monitor.Status, erro
 	done := make(chan []monitor.Status, 1)
 	go func() {
 		final := m.Run(ctx, func(u monitor.Update) {
+			if record != nil {
+				record(u)
+			}
 			select {
 			case model.updates <- updateMsg(u):
 			case <-ctx.Done():

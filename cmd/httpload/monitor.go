@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/nartkosova/tui-load-testing-tool/internal/monitor"
+	"github.com/nartkosova/tui-load-testing-tool/internal/store"
 	"github.com/nartkosova/tui-load-testing-tool/internal/tui"
 )
 
@@ -28,7 +29,7 @@ func (u *urlsFlag) Set(value string) error {
 const timeFormat = "2006-01-02 15:04:05"
 
 func runMonitor(ctx context.Context, args []string, stdout, stderr io.Writer) int {
-	var configPath, method string
+	var configPath, method, dbPath string
 	var interval, timeout, degraded time.Duration
 	var failThreshold int
 	var interactive, verbose bool
@@ -46,6 +47,7 @@ func runMonitor(ctx context.Context, args []string, stdout, stderr io.Writer) in
 	flags.IntVar(&failThreshold, "fail-threshold", monitor.DefaultFailThreshold, "consecutive failed checks before a target is down")
 	flags.DurationVar(&degraded, "degraded", 0, "latency above which a successful check is degraded (0 disables)")
 	flags.BoolVar(&interactive, "tui", false, "show the live monitor in the terminal UI")
+	flags.StringVar(&dbPath, "db", "", "SQLite file to store checks and incidents in")
 	flags.BoolVar(&verbose, "v", false, "log every check, not only state changes")
 	if err := flags.Parse(args); err != nil {
 		if err == flag.ErrHelp {
@@ -103,16 +105,36 @@ func runMonitor(ctx context.Context, args []string, stdout, stderr io.Writer) in
 		return 2
 	}
 
+	var record func(monitor.Update)
+	if dbPath != "" {
+		db, err := store.Open(dbPath)
+		if err != nil {
+			fmt.Fprintln(stderr, err)
+			return 1
+		}
+		defer db.Close()
+		record = func(u monitor.Update) {
+			if err := db.RecordCheck(u); err != nil {
+				fmt.Fprintf(stderr, "store: %v\n", err)
+			}
+		}
+	}
+
 	var statuses []monitor.Status
 	if interactive {
-		statuses, err = tui.RunMonitor(ctx, mon)
+		statuses, err = tui.RunMonitor(ctx, mon, record)
 		if err != nil {
 			fmt.Fprintln(stderr, err)
 			return 1
 		}
 	} else {
 		fmt.Fprintf(stdout, "monitoring %d targets, press Ctrl+C to stop\n", len(targets))
-		statuses = mon.Run(ctx, func(u monitor.Update) { logUpdate(stdout, u, verbose) })
+		statuses = mon.Run(ctx, func(u monitor.Update) {
+			if record != nil {
+				record(u)
+			}
+			logUpdate(stdout, u, verbose)
+		})
 	}
 	printMonitorSummary(stdout, statuses, time.Now())
 	return 0
