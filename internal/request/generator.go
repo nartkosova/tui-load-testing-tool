@@ -20,6 +20,8 @@ type Config struct {
 	Timeout time.Duration
 }
 
+const maxIdleConnsPerHost = 10000
+
 type ErrorKind string
 
 const (
@@ -64,12 +66,16 @@ func NewGenerator(cfg Config) (*Generator, error) {
 		return nil, fmt.Errorf("invalid request: %w", err)
 	}
 
+	transport := http.DefaultTransport.(*http.Transport).Clone()
+	transport.MaxIdleConns = 0
+	transport.MaxIdleConnsPerHost = maxIdleConnsPerHost
+
 	return &Generator{
 		url:    cfg.URL,
 		method: method,
 		header: cfg.Header.Clone(),
 		body:   bytes.Clone(cfg.Body),
-		client: &http.Client{Timeout: cfg.Timeout},
+		client: &http.Client{Timeout: cfg.Timeout, Transport: transport},
 	}, nil
 }
 
