@@ -1,0 +1,4 @@
+	build	vcs=git
+	build	vcs.revision=8ab89bcb8a8b9592db340611e50e91030927f54b
+	build	vcs.time=2026-11-01T17:43:36Z
+	build	vcs.modified=true

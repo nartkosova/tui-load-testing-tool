@@ -1,0 +1,15 @@
+pattern: pipeline
+concurrency: 10
+requests: 8640
+responses: 8630
+errors: 10
+HTTP errors: 0
+canceled: 0
+duration: 10.001692586s
+requests/sec: 863.85
+error rate: 0.12%
+HTTP error rate: 0.00%
+response bytes: 17260
+success latency: samples=8630 rejected=0 min=10.376ms avg=11.57405ms p50=11.575ms p95=12.095ms p99=12.375ms max=13.727ms
+HTTP error latency: unavailable (samples: 0, rejected: 0)
+failure latency: samples=10 rejected=0 min=9.672ms avg=9.9664ms p50=9.863ms p95=10.207ms p99=10.207ms max=10.207ms

@@ -1,0 +1,58 @@
+{
+  "run_id": "E088-worker-pool-fast-c100-db-r1",
+  "spec": {
+    "tool": "httpload",
+    "pattern": "worker-pool",
+    "endpoint": "fast",
+    "concurrency": 100,
+    "sqlite": true,
+    "group": "E_sqlite",
+    "rep": 1,
+    "order": 88,
+    "run_id": "E088-worker-pool-fast-c100-db-r1"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T175544Z-transport-full/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "worker-pool",
+    "-concurrency",
+    "100",
+    "-duration",
+    "10s",
+    "-timeout",
+    "10s",
+    "-db",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T175544Z-transport-full/raw/runs/E088-worker-pool-fast-c100-db-r1.db"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T175544Z-transport-full/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "worker-pool",
+    "-concurrency",
+    "100",
+    "-duration",
+    "3s",
+    "-timeout",
+    "10s"
+  ],
+  "warmup_s": 3,
+  "measure_s": 10,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/fast"
+  },
+  "pty": null
+}

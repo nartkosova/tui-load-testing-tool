@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-11-01T16:11:42+00:00",
+  "repository": {
+    "path": "/home/nart/projekte/tui-load-testing-tool",
+    "commit": "adc9ddc",
+    "commit_time": "2026-11-01T13:38:25+01:00",
+    "branch": "main",
+    "tracked_changes_vs_head": "",
+    "status_porcelain": "?? eval/",
+    "dirty_note": "Only the untracked eval/ directory (evaluation code and results) differs from HEAD; no tracked file is modified. Go build info therefore reports vcs.modified=true.",
+    "agents_md": "AGENTS.md not present in the checkout; the user's stated rules (no code comments, formatting/linting) were applied (gofmt, go vet, ruff check, ruff format).",
+    "provenance_note": "Measured with a binary built from 8ab89bc plus the uncommitted diff in raw/generator_change.diff; that diff was later committed unchanged as adc9ddc (verified byte-identical), so these results describe adc9ddc."
+  },
+  "build": {
+    "httpload": "go build -o /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload ./cmd/httpload (as make build; default flags, CGO_ENABLED=1, GOAMD64=v1, no -race, no -cover)",
+    "benchserver": "CGO_ENABLED=0 go build -o /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/benchserver ./bench/server",
+    "monitorserver": "go build -o /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/monitorserver ./eval/monitorserver",
+    "latencyacc": "go build -o /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/latencyacc ./eval/latency",
+    "target_image": "docker build -t httpload-eval-target:e402cc8 -f eval/target/Dockerfile /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin",
+    "httpload_buildinfo": "raw/httpload_buildinfo.txt",
+    "sha256": "97b43e495623bf146c1fa4aab924f67c01e2d7c63cb19bb26c556ed5efc33dd0  /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/benchserver\n0123f37f3fb110a27bd0501418a962461654b36cad0bd1933c65760f40675e60  /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload\nc94d2731cfdb1583e1954083a1841df1099ea901096ce7eebbcccb2df68dd67d  /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/latencyacc\n9982fc11f5ee6dbed3de0a756cf1c3f2231742f01f5d8e86708093ff9c96ade5  /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/monitorserver"
+  },
+  "system": {
+    "os": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "kernel": "6.12.88+deb13-amd64",
+    "uname": "Linux Nart 6.12.88+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.88-1 (2026-05-15) x86_64 ",
+    "cpu_model": "12th Gen Intel(R) Core(TM) i5-1235U",
+    "logical_cpus": 12,
+    "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           39 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  12\nOn-line CPU(s) list:                     0-11\nVendor ID:                               GenuineIntel\nModel name:                              12th Gen Intel(R) Core(TM) i5-1235U\nCPU family:                              6\nModel:                                   154\nThread(s) per core:                      2\nCore(s) per socket:                      10\nSocket(s):                               1\nStepping:                                4\nCPU(s) scaling MHz:                      86%\nCPU max MHz:                             4400.0000\nCPU min MHz:                             400.0000\nBogoMIPS:                                4992.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities\nVirtualization:                          VT-x\nL1d cache:                               352 KiB (10 instances)\nL1i cache:                               576 KiB (10 instances)\nL2 cache:                                6.5 MiB (4 instances)\nL3 cache:                                12 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-11\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Mitigation; Clear Register File\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace",
+    "cpu_topology": "CPU CORE    MAXMHZ\n  0    0 4400.0000\n  1    0 4400.0000\n  2    1 4400.0000\n  3    1 4400.0000\n  4    2 3300.0000\n  5    3 3300.0000\n  6    4 3300.0000\n  7    5 3300.0000\n  8    6 3300.0000\n  9    7 3300.0000\n 10    8 3300.0000\n 11    9 3300.0000",
+    "core_types": "CPUs 0-3: 2 P-cores with SMT (max 4.4 GHz); CPUs 4-11: 8 E-cores (max 3.3 GHz)",
+    "mem_total_mib": 15558,
+    "mem_available_mib_at_start": 6408,
+    "swap_total_mib": 4074,
+    "swap_free_mib_at_start": 2702,
+    "cpufreq_governor": "powersave",
+    "platform_profile": "balanced",
+    "intel_no_turbo": "0",
+    "ac_online": "1",
+    "battery_status": "Charging",
+    "ulimit_nofile": "524288",
+    "ip_local_port_range": "32768\t60999",
+    "tcp_tw_reuse": "2",
+    "tcp_fin_timeout": "60",
+    "somaxconn": "4096",
+    "loadavg_at_start": "0.16 0.60 0.87 5/1667 101518",
+    "uptime": "1307995.25 138486.63",
+    "background_containers": "field-report-mysql mysql:8.0 Up 11 days",
+    "background_container_stats": "field-report-mysql cpu=0.58% mem=264.1MiB / 15.19GiB"
+  },
+  "tool_versions": {
+    "httpload": "adc9ddc (go version go1.27.2 linux/amd64)",
+    "k6": "k6 v2.3.0 (commit/e088784614, go1.26.8, linux/amd64)",
+    "wrk": "wrk debian/4.1.0-4+b1 [epoll] Copyright (C) 2012 Will Glozer",
+    "hey": "0.1.4 (Debian 0.1.4+ds-1+b8)"
+  },
+  "other_versions": {
+    "go": "go version go1.27.2 linux/amd64",
+    "gomaxprocs_default": "12",
+    "gomaxprocs_under_taskset_generator_cpus": "4",
+    "sqlite_driver": "modernc.org/sqlite v1.38.2 (pure Go, modernc.org/libc v1.66.3)",
+    "hdrhistogram": "github.com/HdrHistogram/hdrhistogram-go v1.4.0",
+    "bubbletea": "github.com/charmbracelet/bubbletea v1.3.10",
+    "k6_source": "official release tarball k6-v2.3.0-linux-amd64.tar.gz, sha256 verified against k6-v2.3.0-checksums.txt",
+    "k6_binary_sha256": "e001bbf39ba67424a85c9c8516440ba5c73ecf7a6021be96c76194380c15f260  /home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/tools/k6",
+    "wrk_package": "wrk 4.1.0-4+b1",
+    "docker": "client=29.5.0 server=29.5.0",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "taskset": "taskset from util-linux 2.41",
+    "ruff": "ruff 0.15.12"
+  },
+  "resource_measurement": {
+    "generator_cpu_and_peak_rss": "os.wait4() rusage of the generator process (ru_utime, ru_stime, ru_maxrss); covers the whole process lifetime",
+    "generator_and_target_samples": "/proc/<pid>/stat utime+stime and /proc/<pid>/status VmRSS sampled every 0.25 s (clock tick resolution 10 ms)",
+    "target_cpu": "difference of /proc/<pid>/stat utime/stime of the target process between immediately before the measured generator starts and immediately after it exits",
+    "target_peak_rss": "VmHWM of the target process after resetting it via /proc/<pid>/clear_refs (5) after warm-up, so it covers only the measured run",
+    "cpu_utilisation_normalisation": "*_pct_1cpu = cpu_seconds / wall_seconds * 100 (100 = one logical CPU busy); *_pct_alloc = *_pct_1cpu / 4 (share of the 4 CPUs the process was pinned to)",
+    "tcp_counters": "/proc/net/snmp Tcp ActiveOpens/AttemptFails deltas (system-wide) and TIME_WAIT sockets from /proc/net/tcp{,6}",
+    "unavailable": "pidstat, perf, /usr/bin/time not used (perf and GNU time not installed); cgroup memory.peak of the container not readable without root"
+  },
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "image_id": "sha256:eeda841b625dbf7c8eeaa67afaec727d7ecff7c559012cebd2ab66ec27ee3844",
+    "contents": "FROM scratch with the statically built bench/server binary, USER 1000:1000",
+    "run": "docker run -d --rm --network host --cpuset-cpus 8-11 --ulimit nofile=524288:524288",
+    "endpoints": "/fast writes 'ok' (2 bytes) immediately; /slow sleeps 10 ms then writes 'ok'",
+    "listen": "127.0.0.1:8099 (host network namespace, loopback; no Docker NAT/proxy)",
+    "memory_limit": "none",
+    "fresh_container_per_run": true,
+    "http": "Go net/http server defaults, HTTP/1.1, keep-alive enabled"
+  },
+  "arrangement": {
+    "co_located": true,
+    "description": "Client and server share one laptop. Generators pinned to CPUs 4-7 (4 E-cores) with taskset; target pinned to CPUs 8-11 (4 E-cores) with --cpuset-cpus; harness, OS and background processes run unpinned and mostly on the P-cores 0-3. Traffic uses the loopback interface."
+  },
+  "protocol": {
+    "warmup_s": 3,
+    "measured_s": 10,
+    "repetitions": 3,
+    "cancellation_repetitions": 2,
+    "seed": 20261101,
+    "order": "per experiment group, all configuration x repetition items shuffled with random.Random(f'{seed}-{group}'); groups run sequentially A, B, C, D, E, F",
+    "cooldown": "min 3 s; extended (max 30 s) while whole-system CPU busy > baseline + 10 points, TIME_WAIT is not drained: each warm-up recreates the pool before its measured run; time_wait_before_measured records it",
+    "request_timeout_s": 10,
+    "http_method": "GET",
+    "http_version": "HTTP/1.1 (plaintext), keep-alive enabled by every tool",
+    "pty_size": "40x120, TERM=xterm-256color",
+    "monitor_repetitions_per_db_setting": 2,
+    "scope_reduction": "single configuration check: worker-pool /fast c=100, 3 reps, 3 s warm-up, 10 s measured"
+  },
+  "baseline": {
+    "busy_pct_10s": 4.54,
+    "time_wait": 2
+  }
+}

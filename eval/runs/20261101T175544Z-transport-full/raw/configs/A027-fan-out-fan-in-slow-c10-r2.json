@@ -1,0 +1,55 @@
+{
+  "run_id": "A027-fan-out-fan-in-slow-c10-r2",
+  "spec": {
+    "tool": "httpload",
+    "pattern": "fan-out-fan-in",
+    "endpoint": "slow",
+    "concurrency": 10,
+    "group": "A_patterns",
+    "rep": 2,
+    "order": 27,
+    "run_id": "A027-fan-out-fan-in-slow-c10-r2"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T175544Z-transport-full/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/slow",
+    "-pattern",
+    "fan-out-fan-in",
+    "-concurrency",
+    "10",
+    "-duration",
+    "10s",
+    "-timeout",
+    "10s"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T175544Z-transport-full/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/slow",
+    "-pattern",
+    "fan-out-fan-in",
+    "-concurrency",
+    "10",
+    "-duration",
+    "3s",
+    "-timeout",
+    "10s"
+  ],
+  "warmup_s": 3,
+  "measure_s": 10,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/slow"
+  },
+  "pty": null
+}

@@ -1,0 +1,31 @@
+diff --git a/internal/request/generator.go b/internal/request/generator.go
+index a95d4c2..eff2f82 100644
+--- a/internal/request/generator.go
++++ b/internal/request/generator.go
+@@ -20,6 +20,8 @@ type Config struct {
+ 	Timeout time.Duration
+ }
+ 
++const maxIdleConnsPerHost = 10000
++
+ type ErrorKind string
+ 
+ const (
+@@ -64,12 +66,16 @@ func NewGenerator(cfg Config) (*Generator, error) {
+ 		return nil, fmt.Errorf("invalid request: %w", err)
+ 	}
+ 
++	transport := http.DefaultTransport.(*http.Transport).Clone()
++	transport.MaxIdleConns = 0
++	transport.MaxIdleConnsPerHost = maxIdleConnsPerHost
++
+ 	return &Generator{
+ 		url:    cfg.URL,
+ 		method: method,
+ 		header: cfg.Header.Clone(),
+ 		body:   bytes.Clone(cfg.Body),
+-		client: &http.Client{Timeout: cfg.Timeout},
++		client: &http.Client{Timeout: cfg.Timeout, Transport: transport},
+ 	}, nil
+ }
+ 
