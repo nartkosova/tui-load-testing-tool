@@ -1,0 +1,8 @@
+++ go build -o eval/runs/20261101T155011Z/bin/httpload ./cmd/httpload
+++ CGO_ENABLED=0
+++ go build -o eval/runs/20261101T155011Z/bin/benchserver ./bench/server
+++ go build -o eval/runs/20261101T155011Z/bin/monitorserver ./eval/monitorserver
+++ go build -o eval/runs/20261101T155011Z/bin/latencyacc ./eval/latency
+++ docker build -q -t httpload-eval-target:e402cc8 -f eval/target/Dockerfile eval/runs/20261101T155011Z/bin
+sha256:eeda841b625dbf7c8eeaa67afaec727d7ecff7c559012cebd2ab66ec27ee3844
+++ set +x

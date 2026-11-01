@@ -1,0 +1,66 @@
+TEXT github.com/nartkosova/tui-load-testing-tool/internal/load.BenchmarkCollectorWithLatency(SB) /home/nart/projekte/tui-load-testing-tool/internal/load/collector_test.go
+  collector_test.go:220	0x6e2020		493b6610		CMPQ SP, 0x10(R14)										
+  collector_test.go:220	0x6e2024		0f86fc000000		JBE 0x6e2126											
+  collector_test.go:220	0x6e202a		55			PUSHQ BP											
+  collector_test.go:220	0x6e202b		4889e5			MOVQ SP, BP											
+  collector_test.go:220	0x6e202e		4883ec70		SUBQ $0x70, SP											
+  collector_test.go:223	0x6e2032		4889842480000000	MOVQ AX, 0x80(SP)										
+  collector_test.go:221	0x6e203a		e841fcffff		CALL github.com/nartkosova/tui-load-testing-tool/internal/load.benchmarkResults(SB)		
+  collector_test.go:221	0x6e203f		4889442450		MOVQ AX, 0x50(SP)										
+  collector_test.go:221	0x6e2044		48895c2458		MOVQ BX, 0x58(SP)										
+  collector_test.go:221	0x6e2049		48894c2460		MOVQ CX, 0x60(SP)										
+  collector_test.go:222	0x6e204e		e82dc0ffff		CALL github.com/nartkosova/tui-load-testing-tool/internal/load.newCollector(SB)			
+  collector_test.go:222	0x6e2053		4889442468		MOVQ AX, 0x68(SP)										
+  benchmark.go:193	0x6e2058		488b842480000000	MOVQ 0x80(SP), AX										
+  benchmark.go:193	0x6e2060		c6805202000001		MOVB $0x1, 0x252(AX)										
+  benchmark.go:193	0x6e2067		31c9			XORL CX, CX											
+  collector_test.go:223	0x6e2069		eb4b			JMP 0x6e20b6											
+  collector_test.go:225	0x6e206b		488b442468		MOVQ 0x68(SP), AX										
+  collector_test.go:225	0x6e2070		48c1e206		SHLQ $0x6, DX											
+  collector_test.go:225	0x6e2074		4c8b642450		MOVQ 0x50(SP), R12										
+  collector_test.go:225	0x6e2079		498b1c14		MOVQ 0(R12)(DX*1), BX										
+  collector_test.go:225	0x6e207d		498b4c1408		MOVQ 0x8(R12)(DX*1), CX										
+  collector_test.go:225	0x6e2082		498b7c1410		MOVQ 0x10(R12)(DX*1), DI									
+  collector_test.go:225	0x6e2087		498b741418		MOVQ 0x18(R12)(DX*1), SI									
+  collector_test.go:225	0x6e208c		4d8b441420		MOVQ 0x20(R12)(DX*1), R8									
+  collector_test.go:225	0x6e2091		4d8b4c1428		MOVQ 0x28(R12)(DX*1), R9									
+  collector_test.go:225	0x6e2096		4d8b541430		MOVQ 0x30(R12)(DX*1), R10									
+  collector_test.go:225	0x6e209b		450fb65c1438		MOVZX 0x38(R12)(DX*1), R11									
+  collector_test.go:225	0x6e20a1		e89ac0ffff		CALL github.com/nartkosova/tui-load-testing-tool/internal/load.(*collector).record(SB)		
+  collector_test.go:224	0x6e20a6		488b4c2448		MOVQ 0x48(SP), CX										
+  collector_test.go:224	0x6e20ab		48ffc1			INCQ CX												
+  benchmark.go:515	0x6e20ae		488b842480000000	MOVQ 0x80(SP), AX										
+  collector_test.go:224	0x6e20b6		48894c2448		MOVQ CX, 0x48(SP)										
+  benchmark.go:515	0x6e20bb		488b90c0020000		MOVQ 0x2c0(AX), DX										
+  benchmark.go:515	0x6e20c2		483990b8020000		CMPQ 0x2b8(AX), DX										
+  benchmark.go:515	0x6e20c9		760c			JBE 0x6e20d7											
+  benchmark.go:516	0x6e20cb		48ffc2			INCQ DX												
+  benchmark.go:516	0x6e20ce		488990c0020000		MOVQ DX, 0x2c0(AX)										
+  collector_test.go:224	0x6e20d5		eb1a			JMP 0x6e20f1											
+  benchmark.go:519	0x6e20d7		e8449fe2ff		CALL testing.(*B).loopSlowPath(SB)								
+  benchmark.go:519	0x6e20dc		0f1f4000		NOPL 0(AX)											
+  benchmark.go:519	0x6e20e0		84c0			TESTL AL, AL											
+  collector_test.go:224	0x6e20e2		742d			JE 0x6e2111											
+  benchmark.go:515	0x6e20e4		488b842480000000	MOVQ 0x80(SP), AX										
+  collector_test.go:225	0x6e20ec		488b4c2448		MOVQ 0x48(SP), CX										
+  collector_test.go:225	0x6e20f1		488b542458		MOVQ 0x58(SP), DX										
+  collector_test.go:225	0x6e20f6		4885d2			TESTQ DX, DX											
+  collector_test.go:225	0x6e20f9		7425			JE 0x6e2120											
+  collector_test.go:225	0x6e20fb		4889c8			MOVQ CX, AX											
+  collector_test.go:225	0x6e20fe		4989d4			MOVQ DX, R12											
+  collector_test.go:225	0x6e2101		4899			CQO												
+  collector_test.go:225	0x6e2103		49f7fc			IDIVQ R12											
+  collector_test.go:225	0x6e2106		4c39e2			CMPQ DX, R12											
+  collector_test.go:225	0x6e2109		0f825cffffff		JB 0x6e206b											
+  collector_test.go:225	0x6e210f		eb06			JMP 0x6e2117											
+  collector_test.go:227	0x6e2111		4883c470		ADDQ $0x70, SP											
+  collector_test.go:227	0x6e2115		5d			POPQ BP												
+  collector_test.go:227	0x6e2116		c3			RET												
+  collector_test.go:225	0x6e2117		e82401dbff		CALL runtime.panicBounds(SB)									
+  collector_test.go:225	0x6e211c		0f1f4000		NOPL 0(AX)											
+  collector_test.go:225	0x6e2120		e83bafd6ff		CALL runtime.panicdivide(SB)									
+  collector_test.go:225	0x6e2125		90			NOPL												
+  collector_test.go:220	0x6e2126		4889442408		MOVQ AX, 0x8(SP)										
+  collector_test.go:220	0x6e212b		e870e3daff		CALL runtime.morestack_noctxt.abi0(SB)								
+  collector_test.go:220	0x6e2130		488b442408		MOVQ 0x8(SP), AX										
+  collector_test.go:220	0x6e2135		e9e6feffff		JMP github.com/nartkosova/tui-load-testing-tool/internal/load.BenchmarkCollectorWithLatency(SB)	

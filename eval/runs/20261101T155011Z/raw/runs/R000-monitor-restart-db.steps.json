@@ -1,0 +1,123 @@
+[
+  {
+    "segment": "A",
+    "start_s": 0,
+    "stop_s": 12,
+    "exit_code": 0,
+    "in_memory_summary": {
+      "state": "DOWN",
+      "checks": 12,
+      "failed checks": 7,
+      "incidents": 1,
+      "uptime_pct": 41.961,
+      "observed": "12s",
+      "incident_lines": [
+        "down 2026-11-01 18:22:04 \u2192 ongoing (7s) HTTP 503"
+      ]
+    },
+    "transitions": [
+      "UNKNOWN\u2192UP",
+      "UP\u2192DOWN"
+    ],
+    "db": {
+      "label": "after_A",
+      "checks": 12,
+      "incidents": [
+        [
+          1,
+          1793553724921296951,
+          null,
+          "HTTP 503"
+        ]
+      ]
+    }
+  },
+  {
+    "segment": "B",
+    "start_s": 13,
+    "stop_s": 34,
+    "exit_code": 0,
+    "in_memory_summary": {
+      "state": "DOWN",
+      "checks": 21,
+      "failed checks": 15,
+      "incidents": 2,
+      "uptime_pct": 28.669,
+      "observed": "21s",
+      "incident_lines": [
+        "down 2026-11-01 18:22:12 \u2192 2026-11-01 18:22:19 (7s) HTTP 503",
+        "down 2026-11-01 18:22:25 \u2192 ongoing (8s) HTTP 503"
+      ]
+    },
+    "transitions": [
+      "UNKNOWN\u2192DOWN",
+      "DOWN\u2192UP",
+      "UP\u2192DOWN"
+    ],
+    "db": {
+      "label": "after_B",
+      "checks": 33,
+      "incidents": [
+        [
+          1,
+          1793553724921296951,
+          1793553739928032100,
+          "HTTP 503"
+        ],
+        [
+          2,
+          1793553732927075801,
+          1793553739928032100,
+          "HTTP 503"
+        ],
+        [
+          3,
+          1793553745927463528,
+          null,
+          "HTTP 503"
+        ]
+      ]
+    }
+  },
+  {
+    "segment": "C",
+    "start_s": 42,
+    "stop_s": 48,
+    "exit_code": 0,
+    "in_memory_summary": {
+      "state": "UP",
+      "checks": 6,
+      "failed checks": 0,
+      "incidents": 0,
+      "uptime_pct": 100.0,
+      "observed": "6s"
+    },
+    "transitions": [
+      "UNKNOWN\u2192UP"
+    ],
+    "db": {
+      "label": "after_C",
+      "checks": 39,
+      "incidents": [
+        [
+          1,
+          1793553724921296951,
+          1793553739928032100,
+          "HTTP 503"
+        ],
+        [
+          2,
+          1793553732927075801,
+          1793553739928032100,
+          "HTTP 503"
+        ],
+        [
+          3,
+          1793553745927463528,
+          null,
+          "HTTP 503"
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,1 @@
+First full-matrix attempt (5 repetitions, 5 s warm-up, 20 s measured), stopped by the user after 31 runs because it would take ~3 h. Rows are valid measurements under that protocol but are NOT pooled with the reduced plan; kept for transparency. The last row in progress at abort was discarded by the harness (never written).

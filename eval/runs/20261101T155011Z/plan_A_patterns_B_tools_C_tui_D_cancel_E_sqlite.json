@@ -1,0 +1,1344 @@
+{
+ "seed": 20261101,
+ "reps": 3,
+ "specs": [
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 0,
+   "run_id": "A000-fan-out-fan-in-fast-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 1,
+   "run_id": "A001-fan-out-fan-in-fast-c100-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 2,
+   "run_id": "A002-worker-pool-fast-c10-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 3,
+   "run_id": "A003-fan-out-fan-in-fast-c100-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 4,
+   "run_id": "A004-pipeline-slow-c10-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 5,
+   "run_id": "A005-pipeline-slow-c1000-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 6,
+   "run_id": "A006-pipeline-slow-c100-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 7,
+   "run_id": "A007-worker-pool-fast-c10-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 8,
+   "run_id": "A008-worker-pool-slow-c100-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 9,
+   "run_id": "A009-pipeline-fast-c10-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 10,
+   "run_id": "A010-pipeline-slow-c10-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 11,
+   "run_id": "A011-pipeline-slow-c10-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 12,
+   "run_id": "A012-fan-out-fan-in-slow-c100-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 13,
+   "run_id": "A013-worker-pool-slow-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 14,
+   "run_id": "A014-fan-out-fan-in-slow-c1000-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 15,
+   "run_id": "A015-worker-pool-fast-c100-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 16,
+   "run_id": "A016-fan-out-fan-in-fast-c10-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 17,
+   "run_id": "A017-fan-out-fan-in-fast-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 18,
+   "run_id": "A018-fan-out-fan-in-slow-c100-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 19,
+   "run_id": "A019-pipeline-fast-c100-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 20,
+   "run_id": "A020-fan-out-fan-in-slow-c10-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 21,
+   "run_id": "A021-worker-pool-slow-c10-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 22,
+   "run_id": "A022-pipeline-slow-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 23,
+   "run_id": "A023-pipeline-slow-c100-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 24,
+   "run_id": "A024-fan-out-fan-in-slow-c10-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 25,
+   "run_id": "A025-pipeline-slow-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 26,
+   "run_id": "A026-worker-pool-fast-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 27,
+   "run_id": "A027-fan-out-fan-in-slow-c10-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 28,
+   "run_id": "A028-worker-pool-fast-c100-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 29,
+   "run_id": "A029-worker-pool-fast-c100-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 30,
+   "run_id": "A030-fan-out-fan-in-fast-c1000-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 31,
+   "run_id": "A031-pipeline-fast-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 32,
+   "run_id": "A032-pipeline-fast-c10-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 33,
+   "run_id": "A033-fan-out-fan-in-fast-c100-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 34,
+   "run_id": "A034-worker-pool-slow-c100-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 35,
+   "run_id": "A035-worker-pool-slow-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 36,
+   "run_id": "A036-worker-pool-slow-c10-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 37,
+   "run_id": "A037-pipeline-fast-c1000-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 38,
+   "run_id": "A038-worker-pool-fast-c1000-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 39,
+   "run_id": "A039-fan-out-fan-in-fast-c10-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 40,
+   "run_id": "A040-pipeline-fast-c10-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 41,
+   "run_id": "A041-pipeline-slow-c100-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 42,
+   "run_id": "A042-fan-out-fan-in-slow-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 43,
+   "run_id": "A043-fan-out-fan-in-slow-c100-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 44,
+   "run_id": "A044-worker-pool-fast-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 45,
+   "run_id": "A045-fan-out-fan-in-fast-c10-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 46,
+   "run_id": "A046-pipeline-fast-c100-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 47,
+   "run_id": "A047-worker-pool-slow-c1000-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 48,
+   "run_id": "A048-pipeline-fast-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 49,
+   "run_id": "A049-worker-pool-slow-c100-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "slow",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 50,
+   "run_id": "A050-worker-pool-slow-c10-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "A_patterns",
+   "rep": 1,
+   "order": 51,
+   "run_id": "A051-fan-out-fan-in-slow-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 10,
+   "group": "A_patterns",
+   "rep": 2,
+   "order": 52,
+   "run_id": "A052-worker-pool-fast-c10-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "A_patterns",
+   "rep": 3,
+   "order": 53,
+   "run_id": "A053-pipeline-fast-c100-r3"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 54,
+   "run_id": "B054-wrk-fast-c1000-r3"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 55,
+   "run_id": "B055-wrk-slow-c1000-r2"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 56,
+   "run_id": "B056-hey-slow-c100-r3"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 57,
+   "run_id": "B057-wrk-fast-c100-r2"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 58,
+   "run_id": "B058-k6-fast-c100-r2"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 59,
+   "run_id": "B059-hey-fast-c1000-r2"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 60,
+   "run_id": "B060-wrk-slow-c100-r2"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 61,
+   "run_id": "B061-wrk-slow-c1000-r3"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 62,
+   "run_id": "B062-k6-slow-c100-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 63,
+   "run_id": "B063-hey-fast-c1000-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 64,
+   "run_id": "B064-hey-slow-c100-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 65,
+   "run_id": "B065-hey-slow-c100-r2"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 66,
+   "run_id": "B066-hey-slow-c1000-r3"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 67,
+   "run_id": "B067-k6-fast-c1000-r3"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 68,
+   "run_id": "B068-k6-slow-c100-r2"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 69,
+   "run_id": "B069-k6-fast-c1000-r1"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 70,
+   "run_id": "B070-k6-slow-c1000-r1"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 71,
+   "run_id": "B071-wrk-slow-c100-r3"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 72,
+   "run_id": "B072-wrk-fast-c100-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 73,
+   "run_id": "B073-hey-fast-c100-r3"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 74,
+   "run_id": "B074-hey-fast-c100-r1"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 75,
+   "run_id": "B075-k6-fast-c100-r1"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 76,
+   "run_id": "B076-wrk-slow-c100-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 77,
+   "run_id": "B077-hey-slow-c1000-r2"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 78,
+   "run_id": "B078-k6-slow-c1000-r3"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 79,
+   "run_id": "B079-wrk-fast-c1000-r2"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "slow",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 80,
+   "run_id": "B080-k6-slow-c100-r3"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 81,
+   "run_id": "B081-hey-fast-c100-r2"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 82,
+   "run_id": "B082-hey-fast-c1000-r3"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 83,
+   "run_id": "B083-wrk-slow-c1000-r1"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 84,
+   "run_id": "B084-wrk-fast-c100-r3"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B_tools",
+   "rep": 3,
+   "order": 85,
+   "run_id": "B085-k6-fast-c100-r3"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 86,
+   "run_id": "B086-k6-fast-c1000-r2"
+  },
+  {
+   "tool": "k6",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 2,
+   "order": 87,
+   "run_id": "B087-k6-slow-c1000-r2"
+  },
+  {
+   "tool": "wrk",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 88,
+   "run_id": "B088-wrk-fast-c1000-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "slow",
+   "concurrency": 1000,
+   "group": "B_tools",
+   "rep": 1,
+   "order": 89,
+   "run_id": "B089-hey-slow-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 1,
+   "order": 90,
+   "run_id": "C090-pipeline-fast-c1000-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 3,
+   "order": 91,
+   "run_id": "C091-pipeline-fast-c1000-tui-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 3,
+   "order": 92,
+   "run_id": "C092-fan-out-fan-in-fast-c100-tui-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 3,
+   "order": 93,
+   "run_id": "C093-pipeline-fast-c100-tui-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 2,
+   "order": 94,
+   "run_id": "C094-worker-pool-fast-c100-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 1,
+   "order": 95,
+   "run_id": "C095-worker-pool-fast-c100-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 2,
+   "order": 96,
+   "run_id": "C096-fan-out-fan-in-fast-c100-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 2,
+   "order": 97,
+   "run_id": "C097-worker-pool-fast-c1000-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 1,
+   "order": 98,
+   "run_id": "C098-fan-out-fan-in-fast-c1000-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 1,
+   "order": 99,
+   "run_id": "C099-worker-pool-fast-c1000-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 2,
+   "order": 100,
+   "run_id": "C100-pipeline-fast-c100-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 3,
+   "order": 101,
+   "run_id": "C101-fan-out-fan-in-fast-c1000-tui-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 1,
+   "order": 102,
+   "run_id": "C102-fan-out-fan-in-fast-c100-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 3,
+   "order": 103,
+   "run_id": "C103-worker-pool-fast-c1000-tui-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 2,
+   "order": 104,
+   "run_id": "C104-pipeline-fast-c1000-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 1,
+   "order": 105,
+   "run_id": "C105-pipeline-fast-c100-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 3,
+   "order": 106,
+   "run_id": "C106-worker-pool-fast-c100-tui-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "group": "C_tui",
+   "rep": 2,
+   "order": 107,
+   "run_id": "C107-fan-out-fan-in-fast-c1000-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 2,
+   "order": 108,
+   "run_id": "D108-worker-pool-fast-c1000-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 1,
+   "order": 109,
+   "run_id": "D109-fan-out-fan-in-fast-c1000-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 1,
+   "order": 110,
+   "run_id": "D110-pipeline-fast-c1000-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": false,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 1,
+   "order": 111,
+   "run_id": "D111-pipeline-fast-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": false,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 1,
+   "order": 112,
+   "run_id": "D112-worker-pool-fast-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": false,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 2,
+   "order": 113,
+   "run_id": "D113-fan-out-fan-in-fast-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": false,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 2,
+   "order": 114,
+   "run_id": "D114-worker-pool-fast-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 2,
+   "order": 115,
+   "run_id": "D115-fan-out-fan-in-fast-c1000-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 1,
+   "order": 116,
+   "run_id": "D116-worker-pool-fast-c1000-tui-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": true,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 2,
+   "order": 117,
+   "run_id": "D117-pipeline-fast-c1000-tui-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "fan-out-fan-in",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": false,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 1,
+   "order": 118,
+   "run_id": "D118-fan-out-fan-in-fast-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "pipeline",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "tui": false,
+   "cancel_after_s": 5,
+   "group": "D_cancel",
+   "rep": 2,
+   "order": 119,
+   "run_id": "D119-pipeline-fast-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "sqlite": false,
+   "group": "E_sqlite",
+   "rep": 2,
+   "order": 120,
+   "run_id": "E120-worker-pool-fast-c1000-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "sqlite": false,
+   "group": "E_sqlite",
+   "rep": 3,
+   "order": 121,
+   "run_id": "E121-worker-pool-fast-c1000-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "sqlite": true,
+   "group": "E_sqlite",
+   "rep": 3,
+   "order": 122,
+   "run_id": "E122-worker-pool-fast-c1000-db-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "sqlite": false,
+   "group": "E_sqlite",
+   "rep": 1,
+   "order": 123,
+   "run_id": "E123-worker-pool-fast-c1000-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "sqlite": true,
+   "group": "E_sqlite",
+   "rep": 1,
+   "order": 124,
+   "run_id": "E124-worker-pool-fast-c100-db-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "sqlite": true,
+   "group": "E_sqlite",
+   "rep": 3,
+   "order": 125,
+   "run_id": "E125-worker-pool-fast-c100-db-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "sqlite": false,
+   "group": "E_sqlite",
+   "rep": 2,
+   "order": 126,
+   "run_id": "E126-worker-pool-fast-c100-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "sqlite": true,
+   "group": "E_sqlite",
+   "rep": 2,
+   "order": 127,
+   "run_id": "E127-worker-pool-fast-c1000-db-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "sqlite": true,
+   "group": "E_sqlite",
+   "rep": 2,
+   "order": 128,
+   "run_id": "E128-worker-pool-fast-c100-db-r2"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "sqlite": false,
+   "group": "E_sqlite",
+   "rep": 3,
+   "order": 129,
+   "run_id": "E129-worker-pool-fast-c100-r3"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "sqlite": true,
+   "group": "E_sqlite",
+   "rep": 1,
+   "order": 130,
+   "run_id": "E130-worker-pool-fast-c1000-db-r1"
+  },
+  {
+   "tool": "httpload",
+   "pattern": "worker-pool",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "sqlite": false,
+   "group": "E_sqlite",
+   "rep": 1,
+   "order": 131,
+   "run_id": "E131-worker-pool-fast-c100-r1"
+  }
+ ]
+}

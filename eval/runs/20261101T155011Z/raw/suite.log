@@ -1,0 +1,283 @@
+2026-11-01T16:38:26Z power ac_online=1 battery=Charging loadavg=1.50 3.20 2.91
+2026-11-01T16:38:26Z start http: timeout 18000 python3 eval/harness.py http --run-dir eval/runs/20261101T155011Z --groups A_patterns,B_tools,C_tui,D_cancel,E_sqlite --reps 3 --warmup 3 --measure 10
+[1/132] A000-fan-out-fan-in-fast-c1000-r1 status=ok exit=0 rps=18458.48997507524 errs=793 took=17.9s elapsed=0.3min
+[2/132] A001-fan-out-fan-in-fast-c100-r3 status=ok exit=0 rps=25284.55467766551 errs=59 took=18.0s elapsed=0.6min
+[3/132] A002-worker-pool-fast-c10-r1 status=ok exit=0 rps=46997.80445129324 errs=6 took=18.0s elapsed=0.9min
+[4/132] A003-fan-out-fan-in-fast-c100-r2 status=ok exit=0 rps=25190.73066522332 errs=60 took=18.0s elapsed=1.2min
+[5/132] A004-pipeline-slow-c10-r1 status=ok exit=0 rps=866.1039172029581 errs=10 took=17.9s elapsed=1.5min
+[6/132] A005-pipeline-slow-c1000-r3 status=ok exit=0 rps=18747.823094870924 errs=594 took=18.0s elapsed=1.8min
+[7/132] A006-pipeline-slow-c100-r2 status=ok exit=0 rps=8967.184880483544 errs=87 took=18.0s elapsed=2.1min
+[8/132] A007-worker-pool-fast-c10-r3 status=ok exit=0 rps=48689.742424711716 errs=9 took=17.9s elapsed=2.4min
+[9/132] A008-worker-pool-slow-c100-r1 status=ok exit=0 rps=9043.928287880462 errs=95 took=18.0s elapsed=2.7min
+[10/132] A009-pipeline-fast-c10-r2 status=ok exit=0 rps=48161.7065914347 errs=7 took=17.9s elapsed=3.0min
+[11/132] A010-pipeline-slow-c10-r3 status=ok exit=0 rps=863.9379577642577 errs=10 took=18.0s elapsed=3.3min
+[12/132] A011-pipeline-slow-c10-r2 status=ok exit=0 rps=862.8827094750486 errs=10 took=18.0s elapsed=3.6min
+[13/132] A012-fan-out-fan-in-slow-c100-r2 status=ok exit=0 rps=9044.198879459898 errs=95 took=18.0s elapsed=3.9min
+[14/132] A013-worker-pool-slow-c1000-r2 status=ok exit=0 rps=18863.672210081302 errs=498 took=18.0s elapsed=4.2min
+[15/132] A014-fan-out-fan-in-slow-c1000-r3 status=ok exit=0 rps=18328.109849481156 errs=407 took=18.0s elapsed=4.5min
+[16/132] A015-worker-pool-fast-c100-r2 status=ok exit=0 rps=24417.03768858353 errs=53 took=17.9s elapsed=4.8min
+[17/132] A016-fan-out-fan-in-fast-c10-r3 status=ok exit=0 rps=43876.28034845552 errs=5 took=18.0s elapsed=5.1min
+[18/132] A017-fan-out-fan-in-fast-c1000-r2 status=ok exit=0 rps=17804.251820078804 errs=389 took=18.0s elapsed=5.4min
+[19/132] A018-fan-out-fan-in-slow-c100-r3 status=ok exit=0 rps=8978.887756633028 errs=86 took=17.9s elapsed=5.7min
+[20/132] A019-pipeline-fast-c100-r1 status=ok exit=0 rps=25178.18865733844 errs=20 took=18.0s elapsed=6.0min
+[21/132] A020-fan-out-fan-in-slow-c10-r3 status=ok exit=0 rps=866.9042710555835 errs=10 took=17.9s elapsed=6.3min
+[22/132] A021-worker-pool-slow-c10-r2 status=ok exit=0 rps=867.869028583093 errs=10 took=18.0s elapsed=6.6min
+[23/132] A022-pipeline-slow-c1000-r1 status=ok exit=0 rps=18485.102150244955 errs=882 took=17.9s elapsed=6.9min
+[24/132] A023-pipeline-slow-c100-r3 status=ok exit=0 rps=8968.35054624086 errs=100 took=18.0s elapsed=7.2min
+[25/132] A024-fan-out-fan-in-slow-c10-r1 status=ok exit=0 rps=864.5961958025954 errs=10 took=18.0s elapsed=7.5min
+[26/132] A025-pipeline-slow-c1000-r2 status=ok exit=0 rps=18659.04453138185 errs=946 took=18.0s elapsed=7.8min
+[27/132] A026-worker-pool-fast-c1000-r2 status=ok exit=0 rps=17972.871674174636 errs=858 took=18.0s elapsed=8.1min
+[28/132] A027-fan-out-fan-in-slow-c10-r2 status=ok exit=0 rps=866.8357532545774 errs=1 took=18.0s elapsed=8.4min
+[29/132] A028-worker-pool-fast-c100-r1 status=ok exit=0 rps=24688.683805467117 errs=92 took=18.0s elapsed=8.7min
+[30/132] A029-worker-pool-fast-c100-r3 status=ok exit=0 rps=24445.19000882493 errs=35 took=17.9s elapsed=9.0min
+[31/132] A030-fan-out-fan-in-fast-c1000-r3 status=ok exit=0 rps=17470.471253932745 errs=561 took=18.0s elapsed=9.3min
+[32/132] A031-pipeline-fast-c1000-r1 status=ok exit=0 rps=17269.576613085086 errs=777 took=18.0s elapsed=9.6min
+[33/132] A032-pipeline-fast-c10-r3 status=ok exit=0 rps=46777.20235453906 errs=8 took=18.0s elapsed=9.9min
+[34/132] A033-fan-out-fan-in-fast-c100-r1 status=ok exit=0 rps=25327.51144114845 errs=41 took=17.9s elapsed=10.2min
+[35/132] A034-worker-pool-slow-c100-r2 status=ok exit=0 rps=8993.441981806902 errs=97 took=17.9s elapsed=10.5min
+[36/132] A035-worker-pool-slow-c1000-r1 status=ok exit=0 rps=18378.5135047363 errs=893 took=17.9s elapsed=10.8min
+[37/132] A036-worker-pool-slow-c10-r3 status=ok exit=0 rps=872.9472638590746 errs=10 took=18.0s elapsed=11.1min
+[38/132] A037-pipeline-fast-c1000-r3 status=ok exit=0 rps=18792.45797181653 errs=643 took=17.9s elapsed=11.4min
+[39/132] A038-worker-pool-fast-c1000-r3 status=ok exit=0 rps=17705.838213636478 errs=373 took=18.0s elapsed=11.7min
+[40/132] A039-fan-out-fan-in-fast-c10-r2 status=ok exit=0 rps=44203.84889706001 errs=7 took=17.9s elapsed=12.0min
+[41/132] A040-pipeline-fast-c10-r1 status=ok exit=0 rps=46796.452101797644 errs=5 took=18.0s elapsed=12.3min
+[42/132] A041-pipeline-slow-c100-r1 status=ok exit=0 rps=8967.079199449565 errs=89 took=18.0s elapsed=12.6min
+[43/132] A042-fan-out-fan-in-slow-c1000-r2 status=ok exit=0 rps=18634.057169439027 errs=279 took=18.0s elapsed=12.9min
+[44/132] A043-fan-out-fan-in-slow-c100-r1 status=ok exit=0 rps=8976.74223991919 errs=88 took=17.9s elapsed=13.2min
+[45/132] A044-worker-pool-fast-c1000-r1 status=ok exit=0 rps=18635.491725612064 errs=318 took=18.0s elapsed=13.5min
+[46/132] A045-fan-out-fan-in-fast-c10-r1 status=ok exit=0 rps=43370.02582076523 errs=2 took=17.9s elapsed=13.8min
+[47/132] A046-pipeline-fast-c100-r2 status=ok exit=0 rps=24275.475577547124 errs=38 took=18.0s elapsed=14.1min
+[48/132] A047-worker-pool-slow-c1000-r3 status=ok exit=0 rps=18375.74173309676 errs=813 took=18.0s elapsed=14.4min
+[49/132] A048-pipeline-fast-c1000-r2 status=ok exit=0 rps=17510.601212273174 errs=694 took=18.0s elapsed=14.7min
+[50/132] A049-worker-pool-slow-c100-r3 status=ok exit=0 rps=8999.164712666452 errs=91 took=17.9s elapsed=15.0min
+[51/132] A050-worker-pool-slow-c10-r1 status=ok exit=0 rps=873.8712521114909 errs=10 took=17.9s elapsed=15.3min
+[52/132] A051-fan-out-fan-in-slow-c1000-r1 status=ok exit=0 rps=18558.565338543307 errs=825 took=17.9s elapsed=15.6min
+[53/132] A052-worker-pool-fast-c10-r2 status=ok exit=0 rps=47431.782633515075 errs=4 took=18.0s elapsed=15.9min
+[54/132] A053-pipeline-fast-c100-r3 status=ok exit=0 rps=24384.885206151048 errs=22 took=17.9s elapsed=16.2min
+[55/132] B054-wrk-fast-c1000-r3 status=ok exit=0 rps=167491.3200343201 errs=0 took=18.1s elapsed=16.5min
+[56/132] B055-wrk-slow-c1000-r2 status=ok exit=0 rps=85049.32116330364 errs=0 took=18.0s elapsed=16.8min
+[57/132] B056-hey-slow-c100-r3 status=ok exit=0 rps=8871.786670931115 errs=0 took=18.0s elapsed=17.1min
+[58/132] B057-wrk-fast-c100-r2 status=ok exit=0 rps=226913.46468732387 errs=0 took=17.9s elapsed=17.4min
+[59/132] B058-k6-fast-c100-r2 status=ok exit=0 rps=59491.36312832836 errs=0 took=18.5s elapsed=17.7min
+[60/132] B059-hey-fast-c1000-r2 status=ok exit=0 rps=80127.40062751055 errs=0 took=18.4s elapsed=18.0min
+[61/132] B060-wrk-slow-c100-r2 status=ok exit=0 rps=8771.070772049694 errs=0 took=18.0s elapsed=18.3min
+[62/132] B061-wrk-slow-c1000-r3 status=ok exit=0 rps=85208.48760273881 errs=0 took=18.0s elapsed=18.6min
+[63/132] B062-k6-slow-c100-r1 status=ok exit=0 rps=8969.860206430543 errs=0 took=18.0s elapsed=18.9min
+[64/132] B063-hey-fast-c1000-r1 status=ok exit=0 rps=99917.06883286871 errs=0 took=18.5s elapsed=19.2min
+[65/132] B064-hey-slow-c100-r1 status=ok exit=0 rps=8918.184180542507 errs=0 took=17.9s elapsed=19.5min
+[66/132] B065-hey-slow-c100-r2 status=ok exit=0 rps=8948.367312283364 errs=0 took=18.0s elapsed=19.8min
+[67/132] B066-hey-slow-c1000-r3 status=ok exit=0 rps=84711.8698244948 errs=0 took=18.3s elapsed=20.1min
+[68/132] B067-k6-fast-c1000-r3 status=ok exit=0 rps=42480.671210916065 errs=0 took=18.5s elapsed=20.4min
+[69/132] B068-k6-slow-c100-r2 status=ok exit=0 rps=9046.064074368482 errs=0 took=18.0s elapsed=20.7min
+[70/132] B069-k6-fast-c1000-r1 status=ok exit=0 rps=46488.784646109474 errs=0 took=18.6s elapsed=21.0min
+[71/132] B070-k6-slow-c1000-r1 status=ok exit=0 rps=38560.038002187015 errs=0 took=18.5s elapsed=21.3min
+[72/132] B071-wrk-slow-c100-r3 status=ok exit=0 rps=8733.66947653995 errs=0 took=18.1s elapsed=21.6min
+[73/132] B072-wrk-fast-c100-r1 status=ok exit=0 rps=228507.00086321658 errs=0 took=17.9s elapsed=21.9min
+[74/132] B073-hey-fast-c100-r3 status=ok exit=0 rps=99987.00168978033 errs=0 took=18.5s elapsed=22.2min
+[75/132] B074-hey-fast-c100-r1 status=ok exit=0 rps=99989.00120986692 errs=0 took=18.5s elapsed=22.5min
+[76/132] B075-k6-fast-c100-r1 status=ok exit=0 rps=50407.600766295516 errs=0 took=18.4s elapsed=22.8min
+[77/132] B076-wrk-slow-c100-r1 status=ok exit=0 rps=8751.048471302523 errs=0 took=18.0s elapsed=23.1min
+[78/132] B077-hey-slow-c1000-r2 status=ok exit=0 rps=84071.74323473882 errs=0 took=18.4s elapsed=23.4min
+[79/132] B078-k6-slow-c1000-r3 status=ok exit=0 rps=38436.15871034995 errs=0 took=18.5s elapsed=23.8min
+[80/132] B079-wrk-fast-c1000-r2 status=ok exit=0 rps=168321.31109355844 errs=0 took=18.0s elapsed=24.1min
+[81/132] B080-k6-slow-c100-r3 status=ok exit=0 rps=8998.369004714403 errs=0 took=18.0s elapsed=24.4min
+[82/132] B081-hey-fast-c100-r2 status=ok exit=0 rps=99988.00143982722 errs=0 took=18.5s elapsed=24.7min
+[83/132] B082-hey-fast-c1000-r3 status=ok exit=0 rps=84269.75498621048 errs=0 took=18.4s elapsed=25.0min
+[84/132] B083-wrk-slow-c1000-r1 status=ok exit=0 rps=85234.79815058463 errs=0 took=17.9s elapsed=25.3min
+[85/132] B084-wrk-fast-c100-r3 status=ok exit=0 rps=227441.9766988299 errs=0 took=18.0s elapsed=25.6min
+[86/132] B085-k6-fast-c100-r3 status=ok exit=0 rps=50533.386045046 errs=0 took=18.4s elapsed=25.9min
+[87/132] B086-k6-fast-c1000-r2 status=ok exit=0 rps=38366.45012736049 errs=0 took=18.5s elapsed=26.2min
+[88/132] B087-k6-slow-c1000-r2 status=ok exit=0 rps=38919.67319562341 errs=0 took=18.5s elapsed=26.5min
+[89/132] B088-wrk-fast-c1000-r1 status=ok exit=0 rps=166739.58004886244 errs=0 took=17.9s elapsed=26.8min
+[90/132] B089-hey-slow-c1000-r1 status=ok exit=0 rps=81951.23169440393 errs=0 took=18.4s elapsed=27.1min
+[91/132] C090-pipeline-fast-c1000-tui-r1 status=ok exit=0 rps=17929.6266223858 errs=585 took=18.4s elapsed=27.4min
+[92/132] C091-pipeline-fast-c1000-tui-r3 status=ok exit=0 rps=18610.940984735513 errs=913 took=18.5s elapsed=27.7min
+[93/132] C092-fan-out-fan-in-fast-c100-tui-r3 status=ok exit=0 rps=25335.330466184325 errs=34 took=18.5s elapsed=28.0min
+[94/132] C093-pipeline-fast-c100-tui-r3 status=ok exit=0 rps=23926.27956050729 errs=94 took=18.4s elapsed=28.3min
+[95/132] C094-worker-pool-fast-c100-tui-r2 status=ok exit=0 rps=24617.80840699896 errs=28 took=18.5s elapsed=28.6min
+[96/132] C095-worker-pool-fast-c100-tui-r1 status=ok exit=0 rps=23860.568113545054 errs=85 took=18.5s elapsed=28.9min
+[97/132] C096-fan-out-fan-in-fast-c100-tui-r2 status=ok exit=0 rps=25539.873721209584 errs=67 took=18.5s elapsed=29.3min
+[98/132] C097-worker-pool-fast-c1000-tui-r2 status=ok exit=0 rps=18433.375799807793 errs=179 took=18.5s elapsed=29.6min
+[99/132] C098-fan-out-fan-in-fast-c1000-tui-r1 status=ok exit=0 rps=18081.055390636728 errs=919 took=18.5s elapsed=29.9min
+[100/132] C099-worker-pool-fast-c1000-tui-r1 status=ok exit=0 rps=17874.291935096528 errs=394 took=18.5s elapsed=30.2min
+[101/132] C100-pipeline-fast-c100-tui-r2 status=ok exit=0 rps=24668.26382548673 errs=32 took=18.4s elapsed=30.5min
+[102/132] C101-fan-out-fan-in-fast-c1000-tui-r3 status=ok exit=0 rps=17671.033874626646 errs=296 took=18.5s elapsed=30.8min
+[103/132] C102-fan-out-fan-in-fast-c100-tui-r1 status=ok exit=0 rps=25356.22347590589 errs=34 took=18.5s elapsed=31.1min
+[104/132] C103-worker-pool-fast-c1000-tui-r3 status=ok exit=0 rps=17457.076618313477 errs=725 took=18.5s elapsed=31.4min
+[105/132] C104-pipeline-fast-c1000-tui-r2 status=ok exit=0 rps=18286.42426023377 errs=863 took=18.5s elapsed=31.7min
+[106/132] C105-pipeline-fast-c100-tui-r1 status=ok exit=0 rps=23884.108116066804 errs=34 took=18.5s elapsed=32.0min
+[107/132] C106-worker-pool-fast-c100-tui-r3 status=ok exit=0 rps=24638.844148020762 errs=33 took=18.5s elapsed=32.3min
+[108/132] C107-fan-out-fan-in-fast-c1000-tui-r2 status=ok exit=0 rps=18073.83736742398 errs=830 took=18.5s elapsed=32.6min
+[109/132] D108-worker-pool-fast-c1000-tui-r2 status=ok exit=1 rps=18911.26210775697 errs=917 took=13.5s elapsed=32.9min
+[110/132] D109-fan-out-fan-in-fast-c1000-tui-r1 status=ok exit=1 rps=17535.81626744977 errs=812 took=13.5s elapsed=33.1min
+[111/132] D110-pipeline-fast-c1000-tui-r1 status=ok exit=1 rps=18602.312341608224 errs=579 took=13.5s elapsed=33.3min
+[112/132] D111-pipeline-fast-c1000-r1 status=ok exit=1 rps=18101.17527875849 errs=716 took=13.0s elapsed=33.5min
+[113/132] D112-worker-pool-fast-c1000-r1 status=ok exit=1 rps=16824.29678545315 errs=477 took=13.2s elapsed=33.8min
+[114/132] D113-fan-out-fan-in-fast-c1000-r2 status=ok exit=1 rps=17829.8187568218 errs=461 took=13.0s elapsed=34.0min
+[115/132] D114-worker-pool-fast-c1000-r2 status=ok exit=1 rps=18561.44567410443 errs=972 took=13.0s elapsed=34.2min
+[116/132] D115-fan-out-fan-in-fast-c1000-tui-r2 status=ok exit=1 rps=18784.201300128836 errs=873 took=13.5s elapsed=34.4min
+[117/132] D116-worker-pool-fast-c1000-tui-r1 status=ok exit=1 rps=17793.50079512897 errs=599 took=13.5s elapsed=34.6min
+[118/132] D117-pipeline-fast-c1000-tui-r2 status=ok exit=1 rps=19411.24347477992 errs=422 took=13.5s elapsed=34.9min
+[119/132] D118-fan-out-fan-in-fast-c1000-r1 status=ok exit=1 rps=18541.504071937386 errs=498 took=13.1s elapsed=35.1min
+[120/132] D119-pipeline-fast-c1000-r2 status=ok exit=1 rps=16870.347523645054 errs=360 took=13.3s elapsed=35.3min
+[121/132] E120-worker-pool-fast-c1000-r2 status=ok exit=0 rps=17865.383176997195 errs=392 took=18.0s elapsed=35.6min
+[122/132] E121-worker-pool-fast-c1000-r3 status=ok exit=0 rps=18211.645479529438 errs=278 took=18.0s elapsed=35.9min
+[123/132] E122-worker-pool-fast-c1000-db-r3 status=ok exit=0 rps=17623.09587641035 errs=282 took=18.0s elapsed=36.2min
+[124/132] E123-worker-pool-fast-c1000-r1 status=ok exit=0 rps=18094.592702141854 errs=508 took=18.0s elapsed=36.5min
+[125/132] E124-worker-pool-fast-c100-db-r1 status=ok exit=0 rps=24518.93769321766 errs=32 took=18.0s elapsed=36.8min
+[126/132] E125-worker-pool-fast-c100-db-r3 status=ok exit=0 rps=24727.81735787491 errs=40 took=18.0s elapsed=37.1min
+[127/132] E126-worker-pool-fast-c100-r2 status=ok exit=0 rps=24521.479978165815 errs=71 took=18.0s elapsed=37.4min
+[128/132] E127-worker-pool-fast-c1000-db-r2 status=ok exit=0 rps=17555.030664213187 errs=341 took=18.1s elapsed=37.7min
+[129/132] E128-worker-pool-fast-c100-db-r2 status=ok exit=0 rps=24263.522964051088 errs=60 took=18.0s elapsed=38.0min
+[130/132] E129-worker-pool-fast-c100-r3 status=ok exit=0 rps=24255.02767799368 errs=53 took=17.9s elapsed=38.3min
+[131/132] E130-worker-pool-fast-c1000-db-r1 status=ok exit=0 rps=17646.139654847102 errs=438 took=18.0s elapsed=38.6min
+[132/132] E131-worker-pool-fast-c100-r1 status=ok exit=0 rps=24539.681567273023 errs=74 took=18.0s elapsed=38.9min
+2026-11-01T17:17:21Z end http exit=0
+2026-11-01T17:17:21Z power ac_online=1 battery=Charging loadavg=4.19 4.66 4.29
+2026-11-01T17:17:21Z start monitor: timeout 1800 python3 eval/harness.py monitor --run-dir eval/runs/20261101T155011Z --reps 2
+[1/4] M000-monitor-r1 status=ok took=66.6s
+[2/4] M001-monitor-db-r1 status=ok took=66.7s
+[3/4] M002-monitor-db-r2 status=ok took=66.7s
+[4/4] M003-monitor-r2 status=ok took=66.6s
+[
+ {
+  "segment": "A",
+  "start_s": 0,
+  "stop_s": 12,
+  "exit_code": 0,
+  "in_memory_summary": {
+   "state": "DOWN",
+   "checks": 12,
+   "failed checks": 7,
+   "incidents": 1,
+   "uptime_pct": 41.961,
+   "observed": "12s",
+   "incident_lines": [
+    "down 2026-11-01 18:22:04 \u2192 ongoing (7s) HTTP 503"
+   ]
+  },
+  "transitions": [
+   "UNKNOWN\u2192UP",
+   "UP\u2192DOWN"
+  ],
+  "db": {
+   "label": "after_A",
+   "checks": 12,
+   "incidents": [
+    [
+     1,
+     1793553724921296951,
+     null,
+     "HTTP 503"
+    ]
+   ]
+  }
+ },
+ {
+  "segment": "B",
+  "start_s": 13,
+  "stop_s": 34,
+  "exit_code": 0,
+  "in_memory_summary": {
+   "state": "DOWN",
+   "checks": 21,
+   "failed checks": 15,
+   "incidents": 2,
+   "uptime_pct": 28.669,
+   "observed": "21s",
+   "incident_lines": [
+    "down 2026-11-01 18:22:12 \u2192 2026-11-01 18:22:19 (7s) HTTP 503",
+    "down 2026-11-01 18:22:25 \u2192 ongoing (8s) HTTP 503"
+   ]
+  },
+  "transitions": [
+   "UNKNOWN\u2192DOWN",
+   "DOWN\u2192UP",
+   "UP\u2192DOWN"
+  ],
+  "db": {
+   "label": "after_B",
+   "checks": 33,
+   "incidents": [
+    [
+     1,
+     1793553724921296951,
+     1793553739928032100,
+     "HTTP 503"
+    ],
+    [
+     2,
+     1793553732927075801,
+     1793553739928032100,
+     "HTTP 503"
+    ],
+    [
+     3,
+     1793553745927463528,
+     null,
+     "HTTP 503"
+    ]
+   ]
+  }
+ },
+ {
+  "segment": "C",
+  "start_s": 42,
+  "stop_s": 48,
+  "exit_code": 0,
+  "in_memory_summary": {
+   "state": "UP",
+   "checks": 6,
+   "failed checks": 0,
+   "incidents": 0,
+   "uptime_pct": 100.0,
+   "observed": "6s"
+  },
+  "transitions": [
+   "UNKNOWN\u2192UP"
+  ],
+  "db": {
+   "label": "after_C",
+   "checks": 39,
+   "incidents": [
+    [
+     1,
+     1793553724921296951,
+     1793553739928032100,
+     "HTTP 503"
+    ],
+    [
+     2,
+     1793553732927075801,
+     1793553739928032100,
+     "HTTP 503"
+    ],
+    [
+     3,
+     1793553745927463528,
+     null,
+     "HTTP 503"
+    ]
+   ]
+  }
+ }
+]
+2026-11-01T17:22:47Z end monitor exit=0
+2026-11-01T17:22:47Z power ac_online=1 battery=Full loadavg=0.07 1.67 3.07
+2026-11-01T17:22:47Z start bench: timeout 3600 python3 eval/bench.py eval/runs/20261101T155011Z 5
+exit=0 rows=110
+2026-11-01T17:24:55Z end bench exit=0
+2026-11-01T17:24:55Z power ac_online=1 battery=Full loadavg=2.15 1.95 2.99
+2026-11-01T17:24:55Z start latency: timeout 900 taskset -c 4-7 eval/runs/20261101T155011Z/bin/latencyacc -out eval/runs/20261101T155011Z/latency_accuracy.csv
+2026-11-01T17:24:57Z end latency exit=0
+2026-11-01T17:24:57Z power ac_online=1 battery=Full loadavg=2.15 1.95 2.99
+2026-11-01T17:24:57Z suite done
+2026-11-01T17:25:08Z start supplementary B2_hey5s (hey /fast, 5 s measured, uncapped)
+[1/6] B2000-hey-fast-c100-r3 status=ok exit=0 rps=135330.227349983 errs=0 took=13.3s elapsed=0.2min
+[2/6] B2001-hey-fast-c1000-r2 status=ok exit=0 rps=82241.26223287398 errs=0 took=13.2s elapsed=0.4min
+[3/6] B2002-hey-fast-c100-r1 status=ok exit=0 rps=100183.96688596053 errs=0 took=13.3s elapsed=0.7min
+[4/6] B2003-hey-fast-c1000-r3 status=ok exit=0 rps=82394.47306417474 errs=0 took=13.2s elapsed=0.9min
+[5/6] B2004-hey-fast-c1000-r1 status=ok exit=0 rps=79254.77122095345 errs=0 took=13.3s elapsed=1.1min
+[6/6] B2005-hey-fast-c100-r2 status=ok exit=0 rps=101642.10736778966 errs=0 took=13.4s elapsed=1.3min
+2026-11-01T17:26:27Z end B2_hey5s exit=0
+2026-11-01T17:27:53Z rerun latency (reference = values accepted by HDR; v1 kept in raw/latency_accuracy_v1_wrong_reference.csv)

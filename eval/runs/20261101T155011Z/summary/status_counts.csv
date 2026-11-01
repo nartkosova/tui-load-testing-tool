@@ -1,0 +1,7 @@
+experiment_group,status,runs
+A_patterns,ok,54
+B2_hey5s,ok,6
+B_tools,ok,36
+C_tui,ok,18
+D_cancel,ok,12
+E_sqlite,ok,12

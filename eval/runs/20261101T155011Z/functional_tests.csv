@@ -1,0 +1,195 @@
+suite,package,test,subtest,outcome,duration_s,exit_code_of_suite,log_ref,log_line,output_excerpt
+go test ./...,github.com/nartkosova/tui-load-testing-tool/bench/server,(package),NA,skip,0,0,raw/tests/unit.jsonl,3,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestStateTransitionsAndIncidents,NA,pass,0,0,raw/tests/unit.jsonl,13,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestExpectedStatus,NA,pass,0,0,raw/tests/unit.jsonl,17,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestUptimeIsTimeBased,NA,pass,0,0,raw/tests/unit.jsonl,21,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestLatencyDrift,NA,pass,0,0,raw/tests/unit.jsonl,25,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestNewValidates,NA,pass,0,0,raw/tests/unit.jsonl,29,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorSendsConfiguredRequestRepeatedly,NA,pass,0,0,raw/tests/unit.jsonl,11,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestCollectorCountsResultCategories,NA,pass,0,0,raw/tests/unit.jsonl,35,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestSummaryRates,NA,pass,0,0,raw/tests/unit.jsonl,49,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestSummaryRatesUnavailableWithoutResults,NA,pass,0,0,raw/tests/unit.jsonl,53,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyEmptyDistributionIsUnavailable,NA,pass,0,0,raw/tests/unit.jsonl,57,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencySingleObservation,NA,pass,0,0,raw/tests/unit.jsonl,61,collector_test.go:82: p50: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: p99: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: max: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: min: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: mean: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000%
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestSingleRequestOutputAndConfiguration,NA,pass,0,0,raw/tests/unit.jsonl,45,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestMonitorModel,NA,pass,0,0,raw/tests/unit.jsonl,41,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestFormEditsSettings,NA,pass,0,0,raw/tests/unit.jsonl,80,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestFormShowsValidationErrors,NA,pass,0,0,raw/tests/unit.jsonl,84,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,worker-pool,pass,0,0,raw/tests/unit.jsonl,76,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyBucketsCoverAllSamples,NA,pass,0,0,raw/tests/unit.jsonl,70,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/store,TestStoreRecordsChecksIncidentsAndRuns,NA,pass,0,0,raw/tests/unit.jsonl,43,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestRunFromFormToResultsAndBack,NA,pass,0,0,raw/tests/unit.jsonl,88,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestQuitDuringRunCancelsTest,NA,pass,0,0,raw/tests/unit.jsonl,103,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestHistogramRendersBuckets,NA,pass,0,0,raw/tests/unit.jsonl,107,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/store,(package),NA,pass,0.007,0,raw/tests/unit.jsonl,113,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestAnimationKeepsPacketsInsideLane,NA,pass,0,0,raw/tests/unit.jsonl,111,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestCount,NA,pass,0,0,raw/tests/unit.jsonl,117,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,fan-out-fan-in,pass,0,0,raw/tests/unit.jsonl,92,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyRejectsValuesOutsideRange,NA,pass,0,0,raw/tests/unit.jsonl,96,collector_test.go:119: max: want 10m0s got 10m0.309759s absolute error 309.759ms relative error 0.05163%
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,(package),NA,pass,0.008,0,raw/tests/unit.jsonl,131,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,repeated,pass,0,0,raw/tests/unit.jsonl,133,collector_test.go:158: p50: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:159: p95: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:160: p99: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:161: min: want 2ms got 2ms absolute error 0s relative error 0.00000% | collector_test.go:162: max: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:163: mean: want 4
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,pipeline,pass,0,0,raw/tests/unit.jsonl,126,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,NA,pass,0,0,raw/tests/unit.jsonl,74,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,wide_range,pass,0,0,raw/tests/unit.jsonl,143,collector_test.go:158: p50: want 9.64ms got 9.647ms absolute error 7µs relative error 0.07261% | collector_test.go:159: p95: want 5.386768s got 5.390335s absolute error 3.567ms relative error 0.06622% | collector_test.go:160: p99: want 8.725877s got 8.732671s absolute error 6.794ms relative error 0.07786% | collector_test.go:161: min: want 10µs got 10µs absolute error 0s relative error 0.00000% | collector_test.go:162: max: want 9.941261s got 9.945087s absolute error 3.826ms relative error 0.038
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,slow_tail,pass,0,0,raw/tests/unit.jsonl,159,collector_test.go:158: p50: want 24ms got 24.015ms absolute error 15µs relative error 0.06250% | collector_test.go:159: p95: want 29ms got 29.007ms absolute error 7µs relative error 0.02414% | collector_test.go:160: p99: want 29ms got 29.007ms absolute error 7µs relative error 0.02414% | collector_test.go:161: min: want 20ms got 20ms absolute error 0s relative error 0.00000% | collector_test.go:162: max: want 4s got 4.001791s absolute error 1.791ms relative error 0.04478% | collector_test.go:163
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,NA,pass,0,0,raw/tests/unit.jsonl,129,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,worker-pool,pass,0,0,raw/tests/unit.jsonl,173,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestDurationCLIContinuesUntilCanceled,NA,pass,0,0,raw/tests/unit.jsonl,149,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-pattern_unknown,pass,0,0,raw/tests/unit.jsonl,183,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-concurrency_0,pass,0,0,raw/tests/unit.jsonl,187,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-concurrency_-1,pass,0,0,raw/tests/unit.jsonl,191,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-requests_0,pass,0,0,raw/tests/unit.jsonl,195,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-requests_-1,pass,0,0,raw/tests/unit.jsonl,199,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-duration_-1s,pass,0,0,raw/tests/unit.jsonl,203,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-duration_invalid,pass,0,0,raw/tests/unit.jsonl,207,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-timeout_0,pass,0,0,raw/tests/unit.jsonl,211,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-header_invalid,pass,0,0,raw/tests/unit.jsonl,215,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,fan-out-fan-in,pass,0,0,raw/tests/unit.jsonl,177,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-unknown,pass,0,0,raw/tests/unit.jsonl,219,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,unexpected,pass,0,0,raw/tests/unit.jsonl,227,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,NA,pass,0,0,raw/tests/unit.jsonl,181,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestCLIHelpAndMissingURL,NA,pass,0,0,raw/tests/unit.jsonl,233,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,pipeline,pass,0,0,raw/tests/unit.jsonl,223,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,NA,pass,0,0,raw/tests/unit.jsonl,171,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,worker-pool,pass,0,0,raw/tests/unit.jsonl,245,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,fan-out-fan-in,pass,0,0,raw/tests/unit.jsonl,249,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,pipeline,pass,0,0,raw/tests/unit.jsonl,253,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,NA,pass,0,0,raw/tests/unit.jsonl,243,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,worker-pool,pass,0,0,raw/tests/unit.jsonl,261,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,fan-out-fan-in,pass,0,0,raw/tests/unit.jsonl,265,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,pipeline,pass,0,0,raw/tests/unit.jsonl,269,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,NA,pass,0,0,raw/tests/unit.jsonl,259,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,worker-pool,pass,0,0,raw/tests/unit.jsonl,277,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,fan-out-fan-in,pass,0,0,raw/tests/unit.jsonl,281,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,pipeline,pass,0,0,raw/tests/unit.jsonl,285,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,NA,pass,0,0,raw/tests/unit.jsonl,275,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestRunSchedulesTargetsUntilCanceled,NA,pass,0.01,0,raw/tests/unit.jsonl,33,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestRunDiscardsCanceledChecks,NA,pass,0,0,raw/tests/unit.jsonl,297,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestConfig,NA,pass,0,0,raw/tests/unit.jsonl,301,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,(package),NA,pass,0.017,0,raw/tests/unit.jsonl,306,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorTimeout,NA,pass,0.02,0,raw/tests/unit.jsonl,39,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestNewGeneratorRejectsInvalidConfiguration,NA,pass,0,0,raw/tests/unit.jsonl,310,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorCancellation,NA,pass,0,0,raw/tests/unit.jsonl,314,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorReadsResponseBody,NA,pass,0,0,raw/tests/unit.jsonl,318,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,(package),NA,pass,0.025,0,raw/tests/unit.jsonl,323,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,worker-pool,pass,0.02,0,raw/tests/unit.jsonl,293,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,fan-out-fan-in,pass,0.02,0,raw/tests/unit.jsonl,327,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,pipeline,pass,0.02,0,raw/tests/unit.jsonl,331,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,NA,pass,0.06,0,raw/tests/unit.jsonl,291,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,worker-pool,pass,0,0,raw/tests/unit.jsonl,339,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,fan-out-fan-in,pass,0,0,raw/tests/unit.jsonl,343,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,pipeline,pass,0,0,raw/tests/unit.jsonl,347,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,NA,pass,0,0,raw/tests/unit.jsonl,337,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,worker-pool,pass,0,0,raw/tests/unit.jsonl,355,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,fan-out-fan-in,pass,0,0,raw/tests/unit.jsonl,359,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,pipeline,pass,0,0,raw/tests/unit.jsonl,363,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,NA,pass,0,0,raw/tests/unit.jsonl,353,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,worker-pool,pass,0.01,0,raw/tests/unit.jsonl,371,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,fan-out-fan-in,pass,0.01,0,raw/tests/unit.jsonl,375,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestMonitorDetectsOutageAndRecovery,NA,pass,0.08,0,raw/tests/unit.jsonl,237,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,pipeline,pass,0,0,raw/tests/unit.jsonl,379,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,NA,pass,0.01,0,raw/tests/unit.jsonl,369,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestNewRunnerRejectsInvalidConfiguration,NA,pass,0,0,raw/tests/unit.jsonl,389,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestRunWithProgressReportsSnapshots,NA,pass,0,0,raw/tests/unit.jsonl,393,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,(package),NA,pass,0.094,0,raw/tests/unit.jsonl,398,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestMonitorConfigFile,NA,pass,0.1,0,raw/tests/unit.jsonl,383,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestMonitorArgumentErrors,NA,pass,0,0,raw/tests/unit.jsonl,402,NA
+go test ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,(package),NA,pass,0.193,0,raw/tests/unit.jsonl,407,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/bench/server,(package),NA,skip,0,0,raw/tests/race.jsonl,3,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorSendsConfiguredRequestRepeatedly,NA,pass,0,0,raw/tests/race.jsonl,11,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestStateTransitionsAndIncidents,NA,pass,0,0,raw/tests/race.jsonl,21,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestExpectedStatus,NA,pass,0,0,raw/tests/race.jsonl,25,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestUptimeIsTimeBased,NA,pass,0,0,raw/tests/race.jsonl,29,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestLatencyDrift,NA,pass,0,0,raw/tests/race.jsonl,33,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestNewValidates,NA,pass,0,0,raw/tests/race.jsonl,37,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestSingleRequestOutputAndConfiguration,NA,pass,0,0,raw/tests/race.jsonl,45,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestMonitorModel,NA,pass,0.01,0,raw/tests/race.jsonl,13,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,worker-pool,pass,0,0,raw/tests/race.jsonl,51,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestFormEditsSettings,NA,pass,0,0,raw/tests/race.jsonl,55,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestCollectorCountsResultCategories,NA,pass,0.01,0,raw/tests/race.jsonl,19,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestSummaryRates,NA,pass,0,0,raw/tests/race.jsonl,67,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestSummaryRatesUnavailableWithoutResults,NA,pass,0,0,raw/tests/race.jsonl,71,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyEmptyDistributionIsUnavailable,NA,pass,0,0,raw/tests/race.jsonl,75,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,fan-out-fan-in,pass,0,0,raw/tests/race.jsonl,59,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencySingleObservation,NA,pass,0,0,raw/tests/race.jsonl,79,collector_test.go:82: max: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: min: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: mean: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: p50: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000% | collector_test.go:82: p99: want 1.5ms got 1.5ms absolute error 0s relative error 0.00000%
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestFormShowsValidationErrors,NA,pass,0,0,raw/tests/race.jsonl,64,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestRunSchedulesTargetsUntilCanceled,NA,pass,0.01,0,raw/tests/race.jsonl,41,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestRunDiscardsCanceledChecks,NA,pass,0,0,raw/tests/race.jsonl,100,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,pipeline,pass,0,0,raw/tests/race.jsonl,86,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,TestConfig,NA,pass,0,0,raw/tests/race.jsonl,104,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestLoadPatternsCLI,NA,pass,0.01,0,raw/tests/race.jsonl,49,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/store,TestStoreRecordsChecksIncidentsAndRuns,NA,pass,0.01,0,raw/tests/race.jsonl,43,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestRunFromFormToResultsAndBack,NA,pass,0,0,raw/tests/race.jsonl,96,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestDurationCLIContinuesUntilCanceled,NA,pass,0,0,raw/tests/race.jsonl,113,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestQuitDuringRunCancelsTest,NA,pass,0,0,raw/tests/race.jsonl,120,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestHistogramRendersBuckets,NA,pass,0,0,raw/tests/race.jsonl,128,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-pattern_unknown,pass,0,0,raw/tests/race.jsonl,130,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-concurrency_0,pass,0,0,raw/tests/race.jsonl,138,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-concurrency_-1,pass,0,0,raw/tests/race.jsonl,142,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-requests_0,pass,0,0,raw/tests/race.jsonl,146,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-requests_-1,pass,0,0,raw/tests/race.jsonl,150,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-duration_-1s,pass,0,0,raw/tests/race.jsonl,154,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-duration_invalid,pass,0,0,raw/tests/race.jsonl,158,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-timeout_0,pass,0,0,raw/tests/race.jsonl,162,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-header_invalid,pass,0,0,raw/tests/race.jsonl,166,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,-unknown,pass,0,0,raw/tests/race.jsonl,170,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,unexpected,pass,0,0,raw/tests/race.jsonl,174,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestInvalidCLIConfigurationDoesNotSendRequests,NA,pass,0,0,raw/tests/race.jsonl,124,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestAnimationKeepsPacketsInsideLane,NA,pass,0,0,raw/tests/race.jsonl,135,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,TestCount,NA,pass,0,0,raw/tests/race.jsonl,184,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestCLIHelpAndMissingURL,NA,pass,0,0,raw/tests/race.jsonl,183,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorTimeout,NA,pass,0.02,0,raw/tests/race.jsonl,17,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestNewGeneratorRejectsInvalidConfiguration,NA,pass,0,0,raw/tests/race.jsonl,195,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorCancellation,NA,pass,0,0,raw/tests/race.jsonl,199,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,TestGeneratorReadsResponseBody,NA,pass,0,0,raw/tests/race.jsonl,203,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyBucketsCoverAllSamples,NA,pass,0.01,0,raw/tests/race.jsonl,92,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyRejectsValuesOutsideRange,NA,pass,0.01,0,raw/tests/race.jsonl,210,collector_test.go:119: max: want 10m0s got 10m0.309759s absolute error 309.759ms relative error 0.05163%
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,slow_tail,pass,0.01,0,raw/tests/race.jsonl,217,collector_test.go:158: p50: want 24ms got 24.015ms absolute error 15µs relative error 0.06250% | collector_test.go:159: p95: want 29ms got 29.007ms absolute error 7µs relative error 0.02414% | collector_test.go:160: p99: want 29ms got 29.007ms absolute error 7µs relative error 0.02414% | collector_test.go:161: min: want 20ms got 20ms absolute error 0s relative error 0.00000% | collector_test.go:162: max: want 4s got 4.001791s absolute error 1.791ms relative error 0.04478% | collector_test.go:163
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,repeated,pass,0,0,raw/tests/race.jsonl,227,collector_test.go:158: p50: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:159: p95: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:160: p99: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:161: min: want 2ms got 2ms absolute error 0s relative error 0.00000% | collector_test.go:162: max: want 5ms got 5.003ms absolute error 3µs relative error 0.06000% | collector_test.go:163: mean: want 4
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,wide_range,pass,0.01,0,raw/tests/race.jsonl,237,collector_test.go:158: p50: want 9.64ms got 9.647ms absolute error 7µs relative error 0.07261% | collector_test.go:159: p95: want 5.386768s got 5.390335s absolute error 3.567ms relative error 0.06622% | collector_test.go:160: p99: want 8.725877s got 8.732671s absolute error 6.794ms relative error 0.07786% | collector_test.go:161: min: want 10µs got 10µs absolute error 0s relative error 0.00000% | collector_test.go:162: max: want 9.941261s got 9.945087s absolute error 3.826ms relative error 0.038
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestLatencyPercentilesMatchReference,NA,pass,0.03,0,raw/tests/race.jsonl,215,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,worker-pool,pass,0,0,raw/tests/race.jsonl,251,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,fan-out-fan-in,pass,0,0,raw/tests/race.jsonl,255,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,pipeline,pass,0,0,raw/tests/race.jsonl,259,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRespectConcurrencyAndRequestCount,NA,pass,0,0,raw/tests/race.jsonl,249,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,worker-pool,pass,0,0,raw/tests/race.jsonl,267,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,fan-out-fan-in,pass,0,0,raw/tests/race.jsonl,271,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,pipeline,pass,0,0,raw/tests/race.jsonl,275,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsAggregateResultsAndCanRunAgain,NA,pass,0,0,raw/tests/race.jsonl,265,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,worker-pool,pass,0,0,raw/tests/race.jsonl,283,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,fan-out-fan-in,pass,0,0,raw/tests/race.jsonl,287,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,pipeline,pass,0,0,raw/tests/race.jsonl,291,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsCancelInFlightRequestsAndStopScheduling,NA,pass,0,0,raw/tests/race.jsonl,281,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,worker-pool,pass,0,0,raw/tests/race.jsonl,299,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,fan-out-fan-in,pass,0,0,raw/tests/race.jsonl,303,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,pipeline,pass,0,0,raw/tests/race.jsonl,307,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDoNotStartWithCanceledContext,NA,pass,0,0,raw/tests/race.jsonl,297,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,worker-pool,pass,0.02,0,raw/tests/race.jsonl,315,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestMonitorDetectsOutageAndRecovery,NA,pass,0.08,0,raw/tests/race.jsonl,191,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,fan-out-fan-in,pass,0.02,0,raw/tests/race.jsonl,319,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,pipeline,pass,0.02,0,raw/tests/race.jsonl,327,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsStopAtDuration,NA,pass,0.06,0,raw/tests/race.jsonl,313,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,worker-pool,pass,0,0,raw/tests/race.jsonl,335,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,fan-out-fan-in,pass,0,0,raw/tests/race.jsonl,339,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,pipeline,pass,0,0,raw/tests/race.jsonl,343,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsRequestLimitCanFinishBeforeDuration,NA,pass,0,0,raw/tests/race.jsonl,333,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,worker-pool,pass,0,0,raw/tests/race.jsonl,351,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,fan-out-fan-in,pass,0,0,raw/tests/race.jsonl,355,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,pipeline,pass,0,0,raw/tests/race.jsonl,359,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsDrainResultsAfterBackpressureAndCancellation,NA,pass,0,0,raw/tests/race.jsonl,349,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,worker-pool,pass,0.02,0,raw/tests/race.jsonl,367,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,fan-out-fan-in,pass,0.02,0,raw/tests/race.jsonl,371,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,pipeline,pass,0.01,0,raw/tests/race.jsonl,375,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestPatternsUseHTTPGenerator,NA,pass,0.05,0,raw/tests/race.jsonl,365,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestNewRunnerRejectsInvalidConfiguration,NA,pass,0,0,raw/tests/race.jsonl,381,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,TestRunWithProgressReportsSnapshots,NA,pass,0,0,raw/tests/race.jsonl,385,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestMonitorConfigFile,NA,pass,0.1,0,raw/tests/race.jsonl,323,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,TestMonitorArgumentErrors,NA,pass,0,0,raw/tests/race.jsonl,392,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/monitor,(package),NA,pass,1.028,0,raw/tests/race.jsonl,397,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/store,(package),NA,pass,1.029,0,raw/tests/race.jsonl,399,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/tui,(package),NA,pass,1.032,0,raw/tests/race.jsonl,401,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/request,(package),NA,pass,1.034,0,raw/tests/race.jsonl,403,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/internal/load,(package),NA,pass,1.206,0,raw/tests/race.jsonl,405,NA
+go test -race ./...,github.com/nartkosova/tui-load-testing-tool/cmd/httpload,(package),NA,pass,1.216,0,raw/tests/race.jsonl,407,NA
+go vet ./...,./...,vet,NA,pass,NA,0,raw/tests/vet.stderr,NA,NA
+gofmt -l .,./...,gofmt,NA,pass,NA,0,raw/tests/gofmt.stdout,NA,NA

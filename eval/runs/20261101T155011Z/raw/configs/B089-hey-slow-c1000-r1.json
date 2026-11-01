@@ -1,0 +1,48 @@
+{
+  "run_id": "B089-hey-slow-c1000-r1",
+  "spec": {
+    "tool": "hey",
+    "endpoint": "slow",
+    "concurrency": 1000,
+    "group": "B_tools",
+    "rep": 1,
+    "order": 89,
+    "run_id": "B089-hey-slow-c1000-r1"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "hey",
+    "-z",
+    "10s",
+    "-c",
+    "1000",
+    "-t",
+    "10",
+    "http://127.0.0.1:8099/slow"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "hey",
+    "-z",
+    "3s",
+    "-c",
+    "1000",
+    "-t",
+    "10",
+    "http://127.0.0.1:8099/slow"
+  ],
+  "warmup_s": 3,
+  "measure_s": 10,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/slow"
+  },
+  "pty": null
+}

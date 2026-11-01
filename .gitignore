@@ -2,4 +2,5 @@
 /bin/
 *.test
 coverage.out
-/eval/runs/
+/eval/runs/*/bin/
+/eval/runs/*/tools/

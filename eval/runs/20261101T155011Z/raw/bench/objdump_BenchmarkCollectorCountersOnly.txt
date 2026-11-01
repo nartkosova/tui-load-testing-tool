@@ -1,0 +1,89 @@
+TEXT github.com/nartkosova/tui-load-testing-tool/internal/load.BenchmarkCollectorCountersOnly(SB) /home/nart/projekte/tui-load-testing-tool/internal/load/collector_test.go
+  collector_test.go:201	0x6e1e80		4c8da424d8feffff	LEAQ 0xfffffed8(SP), R12										
+  collector_test.go:201	0x6e1e88		4d3b6610		CMPQ R12, 0x10(R14)											
+  collector_test.go:201	0x6e1e8c		0f8668010000		JBE 0x6e1ffa												
+  collector_test.go:201	0x6e1e92		55			PUSHQ BP												
+  collector_test.go:201	0x6e1e93		4889e5			MOVQ SP, BP												
+  collector_test.go:201	0x6e1e96		4881eca0010000		SUBQ $0x1a0, SP												
+  collector_test.go:204	0x6e1e9d		48898424b0010000	MOVQ AX, 0x1b0(SP)											
+  collector_test.go:202	0x6e1ea5		e8d6fdffff		CALL github.com/nartkosova/tui-load-testing-tool/internal/load.benchmarkResults(SB)			
+  collector_test.go:202	0x6e1eaa		4889842458010000	MOVQ AX, 0x158(SP)											
+  collector_test.go:202	0x6e1eb2		48895c2408		MOVQ BX, 0x8(SP)											
+  collector_test.go:203	0x6e1eb7		488d4c2418		LEAQ 0x18(SP), CX											
+  collector_test.go:203	0x6e1ebc		ba05000000		MOVL $0x5, DX												
+  collector_test.go:203	0x6e1ec1		440f1139		MOVUPS X15, 0(CX)											
+  collector_test.go:203	0x6e1ec5		440f117910		MOVUPS X15, 0x10(CX)											
+  collector_test.go:203	0x6e1eca		440f117920		MOVUPS X15, 0x20(CX)											
+  collector_test.go:203	0x6e1ecf		440f117930		MOVUPS X15, 0x30(CX)											
+  collector_test.go:203	0x6e1ed4		4883c140		ADDQ $0x40, CX												
+  collector_test.go:203	0x6e1ed8		ffca			DECL DX													
+  collector_test.go:203	0x6e1eda		75e5			JNE 0x6e1ec1												
+  benchmark.go:193	0x6e1edc		488b8c24b0010000	MOVQ 0x1b0(SP), CX											
+  benchmark.go:193	0x6e1ee4		c6815202000001		MOVB $0x1, 0x252(CX)											
+  collector_test.go:204	0x6e1eeb		31d2			XORL DX, DX												
+  collector_test.go:204	0x6e1eed		eb07			JMP 0x6e1ef6												
+  collector_test.go:205	0x6e1eef		488d5701		LEAQ 0x1(DI), DX											
+  collector_test.go:206	0x6e1ef3		4889f0			MOVQ SI, AX												
+  benchmark.go:515	0x6e1ef6		488bb1c0020000		MOVQ 0x2c0(CX), SI											
+  benchmark.go:515	0x6e1efd		0f1f00			NOPL 0(AX)												
+  benchmark.go:515	0x6e1f00		4839b1b8020000		CMPQ 0x2b8(CX), SI											
+  benchmark.go:515	0x6e1f07		760c			JBE 0x6e1f15												
+  benchmark.go:516	0x6e1f09		48ffc6			INCQ SI													
+  benchmark.go:516	0x6e1f0c		4889b1c0020000		MOVQ SI, 0x2c0(CX)											
+  collector_test.go:205	0x6e1f13		eb32			JMP 0x6e1f47												
+  collector_test.go:205	0x6e1f15		4889542410		MOVQ DX, 0x10(SP)											
+  benchmark.go:519	0x6e1f1a		4889c8			MOVQ CX, AX												
+  benchmark.go:519	0x6e1f1d		0f1f00			NOPL 0(AX)												
+  benchmark.go:519	0x6e1f20		e8fba0e2ff		CALL testing.(*B).loopSlowPath(SB)									
+  benchmark.go:519	0x6e1f25		84c0			TESTL AL, AL												
+  collector_test.go:205	0x6e1f27		0f84b9000000		JE 0x6e1fe6												
+  collector_test.go:206	0x6e1f2d		488b842458010000	MOVQ 0x158(SP), AX											
+  benchmark.go:515	0x6e1f35		488b8c24b0010000	MOVQ 0x1b0(SP), CX											
+  collector_test.go:206	0x6e1f3d		488b542410		MOVQ 0x10(SP), DX											
+  collector_test.go:206	0x6e1f42		488b5c2408		MOVQ 0x8(SP), BX											
+  collector_test.go:206	0x6e1f47		4885db			TESTQ BX, BX												
+  collector_test.go:206	0x6e1f4a		0f84a4000000		JE 0x6e1ff4												
+  collector_test.go:202	0x6e1f50		4889c6			MOVQ AX, SI												
+  collector_test.go:206	0x6e1f53		4889d0			MOVQ DX, AX												
+  collector_test.go:205	0x6e1f56		4889d7			MOVQ DX, DI												
+  collector_test.go:206	0x6e1f59		4899			CQO													
+  collector_test.go:206	0x6e1f5b		48f7fb			IDIVQ BX												
+  collector_test.go:206	0x6e1f5e		6690			NOPW													
+  collector_test.go:206	0x6e1f60		4839d3			CMPQ BX, DX												
+  collector_test.go:206	0x6e1f63		0f8686000000		JBE 0x6e1fef												
+  collector_test.go:206	0x6e1f69		48c1e206		SHLQ $0x6, DX												
+  collector_test.go:206	0x6e1f6d		4801f2			ADDQ SI, DX												
+  collector_test.go:206	0x6e1f70		4c8d842460010000	LEAQ 0x160(SP), R8											
+  collector_test.go:206	0x6e1f78		440f1032		MOVUPS 0(DX), X14											
+  collector_test.go:206	0x6e1f7c		450f1130		MOVUPS X14, 0(R8)											
+  collector_test.go:206	0x6e1f80		440f107210		MOVUPS 0x10(DX), X14											
+  collector_test.go:206	0x6e1f85		450f117010		MOVUPS X14, 0x10(R8)											
+  collector_test.go:206	0x6e1f8a		440f107220		MOVUPS 0x20(DX), X14											
+  collector_test.go:206	0x6e1f8f		450f117020		MOVUPS X14, 0x20(R8)											
+  collector_test.go:206	0x6e1f94		440f107230		MOVUPS 0x30(DX), X14											
+  collector_test.go:206	0x6e1f99		450f117030		MOVUPS X14, 0x30(R8)											
+  collector_test.go:207	0x6e1f9e		48ff442418		INCQ 0x18(SP)												
+  collector_test.go:208	0x6e1fa3		488b542440		MOVQ 0x40(SP), DX											
+  collector_test.go:208	0x6e1fa8		4803942470010000	ADDQ 0x170(SP), DX											
+  collector_test.go:208	0x6e1fb0		4889542440		MOVQ DX, 0x40(SP)											
+  collector_test.go:209	0x6e1fb5		4883bc248801000000	CMPQ 0x188(SP), $0x0											
+  collector_test.go:209	0x6e1fbe		6690			NOPW													
+  collector_test.go:209	0x6e1fc0		7407			JE 0x6e1fc9												
+  collector_test.go:210	0x6e1fc2		48ff442428		INCQ 0x28(SP)												
+  collector_test.go:210	0x6e1fc7		eb05			JMP 0x6e1fce												
+  collector_test.go:212	0x6e1fc9		48ff442420		INCQ 0x20(SP)												
+  collector_test.go:214	0x6e1fce		80bc249801000000	CMPB 0x198(SP), $0x0											
+  collector_test.go:214	0x6e1fd6		0f8413ffffff		JE 0x6e1eef												
+  collector_test.go:215	0x6e1fdc		48ff442430		INCQ 0x30(SP)												
+  collector_test.go:215	0x6e1fe1		e909ffffff		JMP 0x6e1eef												
+  collector_test.go:218	0x6e1fe6		4881c4a0010000		ADDQ $0x1a0, SP												
+  collector_test.go:218	0x6e1fed		5d			POPQ BP													
+  collector_test.go:218	0x6e1fee		c3			RET													
+  collector_test.go:206	0x6e1fef		e84c02dbff		CALL runtime.panicBounds(SB)										
+  collector_test.go:206	0x6e1ff4		e867b0d6ff		CALL runtime.panicdivide(SB)										
+  collector_test.go:206	0x6e1ff9		90			NOPL													
+  collector_test.go:201	0x6e1ffa		4889442408		MOVQ AX, 0x8(SP)											
+  collector_test.go:201	0x6e1fff		90			NOPL													
+  collector_test.go:201	0x6e2000		e89be4daff		CALL runtime.morestack_noctxt.abi0(SB)									
+  collector_test.go:201	0x6e2005		488b442408		MOVQ 0x8(SP), AX											
+  collector_test.go:201	0x6e200a		e971feffff		JMP github.com/nartkosova/tui-load-testing-tool/internal/load.BenchmarkCollectorCountersOnly(SB)	

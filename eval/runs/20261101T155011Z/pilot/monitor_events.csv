@@ -1,0 +1,42 @@
+run_id,repetition,sqlite_enabled,event_kind,phase,expected_transition,server_change_utc,server_change_rel_s,policy_check_utc,observed_report_utc,observed_transition,detection_delay_s,delay_from_policy_check_s,reported_backdated_start_utc,value_reference,value_observed,difference,notes
+M000-monitor-db-r1,1,true,detect_down,sustained_failure,UP→DOWN,2026-11-01T16:19:46.116155+00:00,16.0004,2026-11-01T16:19:47.169448+00:00,2026-11-01T16:19:47.177136+00:00,UP→DOWN,1.060982,0.007688,"2026-11-01 17:19:46 (local, 1 s resolution)",NA,NA,NA,NA
+M000-monitor-db-r1,1,true,recover,recovery,DOWN→UP,2026-11-01T16:19:58.116542+00:00,28.0008,2026-11-01T16:19:58.169038+00:00,2026-11-01T16:19:58.177465+00:00,DOWN→UP,0.060924,0.008427,NA,NA,NA,NA,NA
+M000-monitor-db-r1,1,true,detect_degraded,slow,UP→DEGRADED,2026-11-01T16:20:06.116181+00:00,36.0005,2026-11-01T16:20:06.168921+00:00,2026-11-01T16:20:06.522688+00:00,UP→DEGRADED,0.406507,0.353767,NA,NA,NA,NA,NA
+M000-monitor-db-r1,1,true,recover_degraded,healthy_after_slow,DEGRADED→UP,2026-11-01T16:20:14.116568+00:00,44.0009,2026-11-01T16:20:14.168909+00:00,2026-11-01T16:20:14.175074+00:00,DEGRADED→UP,0.058505,0.006165,NA,NA,NA,NA,NA
+M000-monitor-db-r1,1,true,detect_down,timeout,UP→DOWN,2026-11-01T16:20:20.115937+00:00,50.0002,2026-11-01T16:20:21.169202+00:00,2026-11-01T16:20:21.977324+00:00,UP→DOWN,1.861388,0.808122,"2026-11-01 17:20:20 (local, 1 s resolution)",NA,NA,NA,NA
+M000-monitor-db-r1,1,true,recover,healthy_after_timeout,DOWN→UP,2026-11-01T16:20:28.115983+00:00,58.0002,2026-11-01T16:20:28.169051+00:00,2026-11-01T16:20:28.176950+00:00,DOWN→UP,0.060968,0.0079,NA,NA,NA,NA,NA
+M000-monitor-db-r1,1,true,detect_degraded,inflight_at_shutdown,UP→DEGRADED,2026-11-01T16:20:34.116112+00:00,64.0004,2026-11-01T16:20:34.169070+00:00,2026-11-01T16:20:34.776215+00:00,UP→DEGRADED,0.660103,0.607145,NA,NA,NA,NA,NA
+M000-monitor-db-r1,1,true,isolated_failure,isolated_failure,none (below threshold),2026-11-01T16:19:40.115973+00:00,10.0002,NA,NA,NA,NA,NA,NA,failed_checks=1;down_transitions=0,down_transitions=0,0,NA
+M000-monitor-db-r1,1,true,comparison,checks_total,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M000-monitor-db-r1,1,true,comparison,failed_checks,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M000-monitor-db-r1,1,true,comparison,incidents,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M000-monitor-db-r1,1,true,comparison,uptime_pct_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,69.813319,69.815,0.001681,NA
+M000-monitor-db-r1,1,true,comparison,inflight_at_shutdown_requests,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA
+M000-monitor-db-r1,1,true,comparison,final_state,NA,NA,NA,NA,NA,NA,NA,NA,NA,DEGRADED,DEGRADED,NA,NA
+M000-monitor-db-r1,1,true,comparison,exit_code,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,NA
+M000-monitor-db-r1,1,true,comparison,incident1_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,12.000387,11.999319,-0.001068,NA
+M000-monitor-db-r1,1,true,comparison,incident2_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,8.000046,8.000482,0.00043538,NA
+M000-monitor-db-r1,1,true,comparison,db_checks_vs_summary,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M000-monitor-db-r1,1,true,comparison,db_failed_checks_vs_summary,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M000-monitor-db-r1,1,true,comparison,db_incidents_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M000-monitor-db-r1,1,true,comparison,db_incident1_duration_s_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,11.999319,11.999636,0.000317056,NA
+M000-monitor-db-r1,1,true,comparison,db_incident1_start_minus_first_failed_arrival_wall_ms,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.972156,-0.972156,NA
+M000-monitor-db-r1,1,true,comparison,db_incident2_duration_s_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,8.000482,7.999778,-0.000703931,NA
+M000-monitor-db-r1,1,true,comparison,db_incident2_start_minus_first_failed_arrival_wall_ms,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.440227,-0.440227,NA
+M001-monitor-r1,1,false,detect_down,sustained_failure,UP→DOWN,2026-11-01T16:20:55.757390+00:00,16.0002,2026-11-01T16:20:56.806177+00:00,2026-11-01T16:20:56.807071+00:00,UP→DOWN,1.049681,0.00089399,"2026-11-01 17:20:55 (local, 1 s resolution)",NA,NA,NA,NA
+M001-monitor-r1,1,false,recover,recovery,DOWN→UP,2026-11-01T16:21:07.757473+00:00,28.0003,2026-11-01T16:21:07.806117+00:00,2026-11-01T16:21:07.807121+00:00,DOWN→UP,0.049648,0.001003,NA,NA,NA,NA,NA
+M001-monitor-r1,1,false,detect_degraded,slow,UP→DEGRADED,2026-11-01T16:21:15.757846+00:00,36.0007,2026-11-01T16:21:15.806149+00:00,2026-11-01T16:21:16.158035+00:00,UP→DEGRADED,0.400189,0.351886,NA,NA,NA,NA,NA
+M001-monitor-r1,1,false,recover_degraded,healthy_after_slow,DEGRADED→UP,2026-11-01T16:21:23.757358+00:00,44.0002,2026-11-01T16:21:23.806185+00:00,2026-11-01T16:21:23.807039+00:00,DEGRADED→UP,0.049681,0.000854221,NA,NA,NA,NA,NA
+M001-monitor-r1,1,false,detect_down,timeout,UP→DOWN,2026-11-01T16:21:29.757837+00:00,50.0007,2026-11-01T16:21:30.807855+00:00,2026-11-01T16:21:31.607375+00:00,UP→DOWN,1.849538,0.799521,"2026-11-01 17:21:29 (local, 1 s resolution)",NA,NA,NA,NA
+M001-monitor-r1,1,false,recover,healthy_after_timeout,DOWN→UP,2026-11-01T16:21:37.757349+00:00,58.0002,2026-11-01T16:21:37.807209+00:00,2026-11-01T16:21:37.808360+00:00,DOWN→UP,0.051011,0.001152,NA,NA,NA,NA,NA
+M001-monitor-r1,1,false,detect_degraded,inflight_at_shutdown,UP→DEGRADED,2026-11-01T16:21:43.757735+00:00,64.0006,2026-11-01T16:21:43.806595+00:00,2026-11-01T16:21:44.408524+00:00,UP→DEGRADED,0.650789,0.60193,NA,NA,NA,NA,NA
+M001-monitor-r1,1,false,isolated_failure,isolated_failure,none (below threshold),2026-11-01T16:20:49.757600+00:00,10.0004,NA,NA,NA,NA,NA,NA,failed_checks=1;down_transitions=0,down_transitions=0,0,NA
+M001-monitor-r1,1,false,comparison,checks_total,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M001-monitor-r1,1,false,comparison,failed_checks,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M001-monitor-r1,1,false,comparison,incidents,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M001-monitor-r1,1,false,comparison,uptime_pct_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,69.812825,69.815,0.002175,NA
+M001-monitor-r1,1,false,comparison,inflight_at_shutdown_requests,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA
+M001-monitor-r1,1,false,comparison,final_state,NA,NA,NA,NA,NA,NA,NA,NA,NA,DEGRADED,DEGRADED,NA,NA
+M001-monitor-r1,1,false,comparison,exit_code,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,NA
+M001-monitor-r1,1,false,comparison,incident1_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,12.000083,11.999547,-0.000535379,NA
+M001-monitor-r1,1,false,comparison,incident2_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,7.999513,8.000975,0.001462,NA

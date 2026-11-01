@@ -1,0 +1,77 @@
+27098681302282	monitoring 1 targets, press Ctrl+C to stop
+27098762538730	2026-11-01 18:18:30  http://127.0.0.1:8098/health  UNKNOWN → UP  HTTP 200 in 2ms
+27099765819412	2026-11-01 18:18:31  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27100764869275	2026-11-01 18:18:32  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27101765021004	2026-11-01 18:18:33  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27102763971660	2026-11-01 18:18:34  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27103764423169	2026-11-01 18:18:35  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27104763555560	2026-11-01 18:18:36  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27105764482116	2026-11-01 18:18:37  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27106764295585	2026-11-01 18:18:38  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27107785505532	2026-11-01 18:18:39  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27108762756909	2026-11-01 18:18:40  http://127.0.0.1:8098/health  UP  HTTP 500 in 1ms
+27109761933516	2026-11-01 18:18:41  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27110763443293	2026-11-01 18:18:42  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27111765478054	2026-11-01 18:18:43  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27112764732499	2026-11-01 18:18:44  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27113763883647	2026-11-01 18:18:45  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27114764520148	2026-11-01 18:18:46  http://127.0.0.1:8098/health  UP  HTTP 503 in 1ms
+27115766170021	2026-11-01 18:18:47  http://127.0.0.1:8098/health  UP → DOWN since 2026-11-01 18:18:46  HTTP 503
+27116764174382	2026-11-01 18:18:48  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 1ms
+27117786881520	2026-11-01 18:18:49  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 1ms
+27118762850599	2026-11-01 18:18:50  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 1ms
+27119764092885	2026-11-01 18:18:51  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 2ms
+27120762425478	2026-11-01 18:18:52  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 0s
+27121765060242	2026-11-01 18:18:53  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 1ms
+27122764996912	2026-11-01 18:18:54  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 1ms
+27123765192120	2026-11-01 18:18:55  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 2ms
+27124763615285	2026-11-01 18:18:56  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 1ms
+27125764566689	2026-11-01 18:18:57  http://127.0.0.1:8098/health  DOWN  HTTP 503 in 2ms
+27126766696630	2026-11-01 18:18:58  http://127.0.0.1:8098/health  DOWN → UP after 12s  HTTP 200 in 2ms
+27127784704577	2026-11-01 18:18:59  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27128764091189	2026-11-01 18:19:00  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27129764786833	2026-11-01 18:19:01  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27130763259700	2026-11-01 18:19:02  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27131763815829	2026-11-01 18:19:03  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27132764422725	2026-11-01 18:19:04  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27133765199081	2026-11-01 18:19:05  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27135114294062	2026-11-01 18:19:06  http://127.0.0.1:8098/health  UP → DEGRADED  HTTP 200 in 353ms
+27136114676032	2026-11-01 18:19:07  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 352ms
+27137114673392	2026-11-01 18:19:08  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 352ms
+27138115586169	2026-11-01 18:19:09  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 353ms
+27139114655186	2026-11-01 18:19:10  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 352ms
+27140113100702	2026-11-01 18:19:11  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 353ms
+27141116284234	2026-11-01 18:19:12  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 353ms
+27142116342828	2026-11-01 18:19:13  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 353ms
+27142763696989	2026-11-01 18:19:14  http://127.0.0.1:8098/health  DEGRADED → UP  HTTP 200 in 1ms
+27143764593910	2026-11-01 18:19:15  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27144761866060	2026-11-01 18:19:16  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27145764191001	2026-11-01 18:19:17  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27146765070491	2026-11-01 18:19:18  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27147764722661	2026-11-01 18:19:19  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27149563794473	2026-11-01 18:19:20  http://127.0.0.1:8098/health  UP  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers) in 801ms
+27150567678000	2026-11-01 18:19:21  http://127.0.0.1:8098/health  UP → DOWN since 2026-11-01 18:19:20  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+27151564602061	2026-11-01 18:19:22  http://127.0.0.1:8098/health  DOWN  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers) in 801ms
+27152564474996	2026-11-01 18:19:23  http://127.0.0.1:8098/health  DOWN  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers) in 801ms
+27153563582705	2026-11-01 18:19:24  http://127.0.0.1:8098/health  DOWN  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers) in 801ms
+27154564592170	2026-11-01 18:19:25  http://127.0.0.1:8098/health  DOWN  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers) in 801ms
+27155565807134	2026-11-01 18:19:26  http://127.0.0.1:8098/health  DOWN  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers) in 801ms
+27156564236856	2026-11-01 18:19:27  http://127.0.0.1:8098/health  DOWN  timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers) in 801ms
+27156766101965	2026-11-01 18:19:28  http://127.0.0.1:8098/health  DOWN → UP after 8s  HTTP 200 in 2ms
+27157763993169	2026-11-01 18:19:29  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27158764435891	2026-11-01 18:19:30  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27159764493666	2026-11-01 18:19:31  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27160764314190	2026-11-01 18:19:32  http://127.0.0.1:8098/health  UP  HTTP 200 in 1ms
+27161765375307	2026-11-01 18:19:33  http://127.0.0.1:8098/health  UP  HTTP 200 in 2ms
+27163366120032	2026-11-01 18:19:34  http://127.0.0.1:8098/health  UP → DEGRADED  HTTP 200 in 603ms
+27164364766088	2026-11-01 18:19:35  http://127.0.0.1:8098/health  DEGRADED  HTTP 200 in 603ms
+27165011746127	
+27165011863119	http://127.0.0.1:8098/health
+27165011897510	state: DEGRADED
+27165011925352	checks: 66
+27165011954028	failed checks: 21
+27165011981928	incidents: 2
+27165012070653	uptime: 69.814% over 1m6s
+27165012101070	latency: recent 310.394ms baseline 65.022ms drift 4.77x
+27165012122224	  down 2026-11-01 18:18:46 → 2026-11-01 18:18:58 (12s) HTTP 503
+27165012157298	  down 2026-11-01 18:19:20 → 2026-11-01 18:19:28 (8s) timeout: Get "http://127.0.0.1:8098/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers)

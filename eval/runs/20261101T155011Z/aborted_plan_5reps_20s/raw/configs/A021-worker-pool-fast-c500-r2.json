@@ -1,0 +1,55 @@
+{
+  "run_id": "A021-worker-pool-fast-c500-r2",
+  "spec": {
+    "tool": "httpload",
+    "pattern": "worker-pool",
+    "endpoint": "fast",
+    "concurrency": 500,
+    "group": "A_patterns",
+    "rep": 2,
+    "order": 21,
+    "run_id": "A021-worker-pool-fast-c500-r2"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "worker-pool",
+    "-concurrency",
+    "500",
+    "-duration",
+    "20s",
+    "-timeout",
+    "10s"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "worker-pool",
+    "-concurrency",
+    "500",
+    "-duration",
+    "5s",
+    "-timeout",
+    "10s"
+  ],
+  "warmup_s": 5,
+  "measure_s": 20,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/fast"
+  },
+  "pty": null
+}

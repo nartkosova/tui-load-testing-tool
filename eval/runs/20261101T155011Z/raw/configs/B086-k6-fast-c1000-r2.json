@@ -1,0 +1,51 @@
+{
+  "run_id": "B086-k6-fast-c1000-r2",
+  "spec": {
+    "tool": "k6",
+    "endpoint": "fast",
+    "concurrency": 1000,
+    "group": "B_tools",
+    "rep": 2,
+    "order": 86,
+    "run_id": "B086-k6-fast-c1000-r2"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/tools/k6",
+    "run",
+    "--quiet",
+    "--no-color",
+    "--no-usage-report",
+    "/home/nart/projekte/tui-load-testing-tool/eval/k6_closed_loop.js"
+  ],
+  "env": {
+    "URL": "http://127.0.0.1:8099/fast",
+    "VUS": "1000",
+    "DURATION": "10s",
+    "TIMEOUT": "10s",
+    "SUMMARY": "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/raw/runs/B086-k6-fast-c1000-r2.k6summary.json",
+    "K6_NO_USAGE_REPORT": "true"
+  },
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/tools/k6",
+    "run",
+    "--quiet",
+    "--no-color",
+    "--no-usage-report",
+    "/home/nart/projekte/tui-load-testing-tool/eval/k6_closed_loop.js"
+  ],
+  "warmup_s": 3,
+  "measure_s": 10,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/fast"
+  },
+  "pty": null
+}

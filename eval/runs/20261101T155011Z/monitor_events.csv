@@ -1,0 +1,86 @@
+run_id,repetition,sqlite_enabled,event_kind,phase,expected_transition,server_change_utc,server_change_rel_s,policy_check_utc,observed_report_utc,observed_transition,detection_delay_s,delay_from_policy_check_s,reported_backdated_start_utc,value_reference,value_observed,difference,notes
+M000-monitor-r1,1,false,detect_down,sustained_failure,UP→DOWN,2026-11-01T17:17:37.182313+00:00,16.001,2026-11-01T17:17:38.229089+00:00,2026-11-01T17:17:38.230210+00:00,UP→DOWN,1.047897,0.001121,"2026-11-01 18:17:37 (local, 1 s resolution)",NA,NA,NA,NA
+M000-monitor-r1,1,false,recover,recovery,DOWN→UP,2026-11-01T17:17:49.181697+00:00,28.0003,2026-11-01T17:17:49.228580+00:00,2026-11-01T17:17:49.229240+00:00,DOWN→UP,0.047543,0.000660277,NA,NA,NA,NA,NA
+M000-monitor-r1,1,false,detect_degraded,slow,UP→DEGRADED,2026-11-01T17:17:57.182015+00:00,36.0007,2026-11-01T17:17:57.228766+00:00,2026-11-01T17:17:57.581162+00:00,UP→DEGRADED,0.399147,0.352396,NA,NA,NA,NA,NA
+M000-monitor-r1,1,false,recover_degraded,healthy_after_slow,DEGRADED→UP,2026-11-01T17:18:05.181679+00:00,44.0003,2026-11-01T17:18:05.228612+00:00,2026-11-01T17:18:05.232323+00:00,DEGRADED→UP,0.050644,0.003711,NA,NA,NA,NA,NA
+M000-monitor-r1,1,false,detect_down,timeout,UP→DOWN,2026-11-01T17:18:11.182144+00:00,50.0008,2026-11-01T17:18:12.229930+00:00,2026-11-01T17:18:13.030215+00:00,UP→DOWN,1.848071,0.800285,"2026-11-01 18:18:11 (local, 1 s resolution)",NA,NA,NA,NA
+M000-monitor-r1,1,false,recover,healthy_after_timeout,DOWN→UP,2026-11-01T17:18:19.181429+00:00,58.0001,2026-11-01T17:18:19.232383+00:00,2026-11-01T17:18:19.232912+00:00,DOWN→UP,0.051482,0.000529245,NA,NA,NA,NA,NA
+M000-monitor-r1,1,false,detect_degraded,inflight_at_shutdown,UP→DEGRADED,2026-11-01T17:18:25.181784+00:00,64.0004,2026-11-01T17:18:25.229444+00:00,2026-11-01T17:18:25.831502+00:00,UP→DEGRADED,0.649718,0.602058,NA,NA,NA,NA,NA
+M000-monitor-r1,1,false,isolated_failure,isolated_failure,none (below threshold),2026-11-01T17:17:31.181660+00:00,10.0003,NA,NA,NA,NA,NA,NA,failed_checks=1;down_transitions=0,down_transitions=0,0,NA
+M000-monitor-r1,1,false,comparison,checks_total,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M000-monitor-r1,1,false,comparison,failed_checks,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M000-monitor-r1,1,false,comparison,incidents,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M000-monitor-r1,1,false,comparison,uptime_pct_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,69.810993,69.817,0.006007,NA
+M000-monitor-r1,1,false,comparison,inflight_at_shutdown_requests,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA
+M000-monitor-r1,1,false,comparison,final_state,NA,NA,NA,NA,NA,NA,NA,NA,NA,DEGRADED,DEGRADED,NA,NA
+M000-monitor-r1,1,false,comparison,exit_code,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,NA
+M000-monitor-r1,1,false,comparison,incident1_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,11.999384,11.999532,0.000147374,NA
+M000-monitor-r1,1,false,comparison,incident2_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,7.999285,8.002696,0.00341,NA
+M001-monitor-db-r1,1,true,detect_down,sustained_failure,UP→DOWN,2026-11-01T17:18:46.816487+00:00,16.0011,2026-11-01T17:18:47.934242+00:00,2026-11-01T17:18:47.942109+00:00,UP→DOWN,1.125622,0.007867,"2026-11-01 18:18:46 (local, 1 s resolution)",NA,NA,NA,NA
+M001-monitor-db-r1,1,true,recover,recovery,DOWN→UP,2026-11-01T17:18:58.815722+00:00,28.0003,2026-11-01T17:18:58.934020+00:00,2026-11-01T17:18:58.942636+00:00,DOWN→UP,0.126913,0.008616,NA,NA,NA,NA,NA
+M001-monitor-db-r1,1,true,detect_degraded,slow,UP→DEGRADED,2026-11-01T17:19:06.816069+00:00,36.0006,2026-11-01T17:19:06.934304+00:00,2026-11-01T17:19:07.290233+00:00,UP→DEGRADED,0.474164,0.355929,NA,NA,NA,NA,NA
+M001-monitor-db-r1,1,true,recover_degraded,healthy_after_slow,DEGRADED→UP,2026-11-01T17:19:14.816005+00:00,44.0005,2026-11-01T17:19:14.933780+00:00,2026-11-01T17:19:14.939636+00:00,DEGRADED→UP,0.123631,0.005856,NA,NA,NA,NA,NA
+M001-monitor-db-r1,1,true,detect_down,timeout,UP→DOWN,2026-11-01T17:19:20.815730+00:00,50.0003,2026-11-01T17:19:21.935216+00:00,2026-11-01T17:19:22.743617+00:00,UP→DOWN,1.927887,0.808401,"2026-11-01 18:19:20 (local, 1 s resolution)",NA,NA,NA,NA
+M001-monitor-db-r1,1,true,recover,healthy_after_timeout,DOWN→UP,2026-11-01T17:19:28.816299+00:00,58.0009,2026-11-01T17:19:28.935747+00:00,2026-11-01T17:19:28.942041+00:00,DOWN→UP,0.125742,0.006294,NA,NA,NA,NA,NA
+M001-monitor-db-r1,1,true,detect_degraded,inflight_at_shutdown,UP→DEGRADED,2026-11-01T17:19:34.816023+00:00,64.0006,2026-11-01T17:19:34.934853+00:00,2026-11-01T17:19:35.542059+00:00,UP→DEGRADED,0.726036,0.607206,NA,NA,NA,NA,NA
+M001-monitor-db-r1,1,true,isolated_failure,isolated_failure,none (below threshold),2026-11-01T17:18:40.815544+00:00,10.0001,NA,NA,NA,NA,NA,NA,failed_checks=1;down_transitions=0,down_transitions=0,0,NA
+M001-monitor-db-r1,1,true,comparison,checks_total,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M001-monitor-db-r1,1,true,comparison,failed_checks,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M001-monitor-db-r1,1,true,comparison,incidents,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M001-monitor-db-r1,1,true,comparison,uptime_pct_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,69.811053,69.814,0.002947,NA
+M001-monitor-db-r1,1,true,comparison,inflight_at_shutdown_requests,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA
+M001-monitor-db-r1,1,true,comparison,final_state,NA,NA,NA,NA,NA,NA,NA,NA,NA,DEGRADED,DEGRADED,NA,NA
+M001-monitor-db-r1,1,true,comparison,exit_code,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,NA
+M001-monitor-db-r1,1,true,comparison,incident1_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,11.999235,11.999208,-2.7324e-05,NA
+M001-monitor-db-r1,1,true,comparison,incident2_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,8.000569,8.001699,0.001129,NA
+M001-monitor-db-r1,1,true,comparison,db_checks_vs_summary,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M001-monitor-db-r1,1,true,comparison,db_failed_checks_vs_summary,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M001-monitor-db-r1,1,true,comparison,db_incidents_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M001-monitor-db-r1,1,true,comparison,db_incident1_duration_s_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,11.999208,11.999163,-4.4491e-05,NA
+M001-monitor-db-r1,1,true,comparison,db_incident1_start_minus_first_failed_arrival_wall_ms,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.679982,-0.679982,NA
+M001-monitor-db-r1,1,true,comparison,db_incident2_duration_s_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,8.001699,8.000776,-0.000922584,NA
+M001-monitor-db-r1,1,true,comparison,db_incident2_start_minus_first_failed_arrival_wall_ms,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.612061,-0.612061,NA
+M002-monitor-db-r2,2,true,detect_down,sustained_failure,UP→DOWN,2026-11-01T17:19:56.520063+00:00,16.0006,2026-11-01T17:19:57.637376+00:00,2026-11-01T17:19:57.645350+00:00,UP→DOWN,1.125287,0.007974,"2026-11-01 18:19:56 (local, 1 s resolution)",NA,NA,NA,NA
+M002-monitor-db-r2,2,true,recover,recovery,DOWN→UP,2026-11-01T17:20:08.520318+00:00,28.0008,2026-11-01T17:20:08.637015+00:00,2026-11-01T17:20:08.646067+00:00,DOWN→UP,0.125749,0.009052,NA,NA,NA,NA,NA
+M002-monitor-db-r2,2,true,detect_degraded,slow,UP→DEGRADED,2026-11-01T17:20:16.520122+00:00,36.0006,2026-11-01T17:20:16.638020+00:00,2026-11-01T17:20:16.995033+00:00,UP→DEGRADED,0.474911,0.357013,NA,NA,NA,NA,NA
+M002-monitor-db-r2,2,true,recover_degraded,healthy_after_slow,DEGRADED→UP,2026-11-01T17:20:24.519938+00:00,44.0005,2026-11-01T17:20:24.636951+00:00,2026-11-01T17:20:24.643370+00:00,DEGRADED→UP,0.123432,0.006419,NA,NA,NA,NA,NA
+M002-monitor-db-r2,2,true,detect_down,timeout,UP→DOWN,2026-11-01T17:20:30.520402+00:00,50.0009,2026-11-01T17:20:31.638594+00:00,2026-11-01T17:20:32.442721+00:00,UP→DOWN,1.922319,0.804127,"2026-11-01 18:20:30 (local, 1 s resolution)",NA,NA,NA,NA
+M002-monitor-db-r2,2,true,recover,healthy_after_timeout,DOWN→UP,2026-11-01T17:20:38.520386+00:00,58.0009,2026-11-01T17:20:38.637758+00:00,2026-11-01T17:20:38.645919+00:00,DOWN→UP,0.125532,0.00816,NA,NA,NA,NA,NA
+M002-monitor-db-r2,2,true,detect_degraded,inflight_at_shutdown,UP→DEGRADED,2026-11-01T17:20:44.520085+00:00,64.0006,2026-11-01T17:20:44.636950+00:00,2026-11-01T17:20:45.244910+00:00,UP→DEGRADED,0.724825,0.60796,NA,NA,NA,NA,NA
+M002-monitor-db-r2,2,true,isolated_failure,isolated_failure,none (below threshold),2026-11-01T17:19:50.520233+00:00,10.0007,NA,NA,NA,NA,NA,NA,failed_checks=1;down_transitions=0,down_transitions=0,0,NA
+M002-monitor-db-r2,2,true,comparison,checks_total,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M002-monitor-db-r2,2,true,comparison,failed_checks,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M002-monitor-db-r2,2,true,comparison,incidents,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M002-monitor-db-r2,2,true,comparison,uptime_pct_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,69.813175,69.816,0.002825,NA
+M002-monitor-db-r2,2,true,comparison,inflight_at_shutdown_requests,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA
+M002-monitor-db-r2,2,true,comparison,final_state,NA,NA,NA,NA,NA,NA,NA,NA,NA,DEGRADED,DEGRADED,NA,NA
+M002-monitor-db-r2,2,true,comparison,exit_code,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,NA
+M002-monitor-db-r2,2,true,comparison,incident1_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,12.000254,11.999846,-0.000408123,NA
+M002-monitor-db-r2,2,true,comparison,incident2_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,7.999985,8.000705,0.00071998,NA
+M002-monitor-db-r2,2,true,comparison,db_checks_vs_summary,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M002-monitor-db-r2,2,true,comparison,db_failed_checks_vs_summary,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M002-monitor-db-r2,2,true,comparison,db_incidents_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M002-monitor-db-r2,2,true,comparison,db_incident1_duration_s_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,11.999846,11.999536,-0.000309597,NA
+M002-monitor-db-r2,2,true,comparison,db_incident1_start_minus_first_failed_arrival_wall_ms,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.50553,-0.50553,NA
+M002-monitor-db-r2,2,true,comparison,db_incident2_duration_s_vs_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,8.000705,8.000083,-0.000621331,NA
+M002-monitor-db-r2,2,true,comparison,db_incident2_start_minus_first_failed_arrival_wall_ms,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.7981,-0.7981,NA
+M003-monitor-r2,2,false,detect_down,sustained_failure,UP→DOWN,2026-11-01T17:21:06.228204+00:00,16.0009,2026-11-01T17:21:07.251830+00:00,2026-11-01T17:21:07.252809+00:00,UP→DOWN,1.024605,0.000978608,"2026-11-01 18:21:06 (local, 1 s resolution)",NA,NA,NA,NA
+M003-monitor-r2,2,false,recover,recovery,DOWN→UP,2026-11-01T17:21:18.227759+00:00,28.0005,2026-11-01T17:21:18.252277+00:00,2026-11-01T17:21:18.253299+00:00,DOWN→UP,0.025539,0.001022,NA,NA,NA,NA,NA
+M003-monitor-r2,2,false,detect_degraded,slow,UP→DEGRADED,2026-11-01T17:21:26.227673+00:00,36.0004,2026-11-01T17:21:26.251182+00:00,2026-11-01T17:21:26.603482+00:00,UP→DEGRADED,0.375809,0.352301,NA,NA,NA,NA,NA
+M003-monitor-r2,2,false,recover_degraded,healthy_after_slow,DEGRADED→UP,2026-11-01T17:21:34.227468+00:00,44.0002,2026-11-01T17:21:34.251248+00:00,2026-11-01T17:21:34.252428+00:00,DEGRADED→UP,0.02496,0.00118,NA,NA,NA,NA,NA
+M003-monitor-r2,2,false,detect_down,timeout,UP→DOWN,2026-11-01T17:21:40.227429+00:00,50.0001,2026-11-01T17:21:41.252191+00:00,2026-11-01T17:21:42.052273+00:00,UP→DOWN,1.824844,0.800082,"2026-11-01 18:21:40 (local, 1 s resolution)",NA,NA,NA,NA
+M003-monitor-r2,2,false,recover,healthy_after_timeout,DOWN→UP,2026-11-01T17:21:48.227420+00:00,58.0001,2026-11-01T17:21:48.252046+00:00,2026-11-01T17:21:48.252869+00:00,DOWN→UP,0.02545,0.000823754,NA,NA,NA,NA,NA
+M003-monitor-r2,2,false,detect_degraded,inflight_at_shutdown,UP→DEGRADED,2026-11-01T17:21:54.227553+00:00,64.0002,2026-11-01T17:21:54.252342+00:00,2026-11-01T17:21:54.854885+00:00,UP→DEGRADED,0.627332,0.602544,NA,NA,NA,NA,NA
+M003-monitor-r2,2,false,isolated_failure,isolated_failure,none (below threshold),2026-11-01T17:21:00.228068+00:00,10.0008,NA,NA,NA,NA,NA,NA,failed_checks=1;down_transitions=0,down_transitions=0,0,NA
+M003-monitor-r2,2,false,comparison,checks_total,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,0,NA
+M003-monitor-r2,2,false,comparison,failed_checks,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,21,0,NA
+M003-monitor-r2,2,false,comparison,incidents,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,NA
+M003-monitor-r2,2,false,comparison,uptime_pct_policy,NA,NA,NA,NA,NA,NA,NA,NA,NA,69.812721,69.816,0.003279,NA
+M003-monitor-r2,2,false,comparison,inflight_at_shutdown_requests,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA
+M003-monitor-r2,2,false,comparison,final_state,NA,NA,NA,NA,NA,NA,NA,NA,NA,DEGRADED,DEGRADED,NA,NA
+M003-monitor-r2,2,false,comparison,exit_code,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,NA
+M003-monitor-r2,2,false,comparison,incident1_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,11.999555,12.000427,0.000871915,NA
+M003-monitor-r2,2,false,comparison,incident2_server_outage_s_vs_policy_s,NA,NA,NA,NA,NA,NA,NA,NA,NA,7.999991,8.00077,0.000779504,NA
+R000-monitor-restart-db,1,true,restart_persistence,after_segment_A,NA,NA,NA,NA,NA,NA,NA,NA,NA,in_memory_checks=12;in_memory_incidents=1;final_state=DOWN,db_checks=12;db_incidents=1;db_open=1;db_closed=0,NA,"transitions=UNKNOWN→UP,UP→DOWN"
+R000-monitor-restart-db,1,true,restart_persistence,after_segment_B,NA,NA,NA,NA,NA,NA,NA,NA,NA,in_memory_checks=21;in_memory_incidents=2;final_state=DOWN,db_checks=33;db_incidents=3;db_open=1;db_closed=2,NA,"transitions=UNKNOWN→DOWN,DOWN→UP,UP→DOWN"
+R000-monitor-restart-db,1,true,restart_persistence,after_segment_C,NA,NA,NA,NA,NA,NA,NA,NA,NA,in_memory_checks=6;in_memory_incidents=0;final_state=UP,db_checks=39;db_incidents=3;db_open=1;db_closed=2,NA,transitions=UNKNOWN→UP

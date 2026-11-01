@@ -1,0 +1,57 @@
+{
+  "run_id": "D113-fan-out-fan-in-fast-c1000-r2",
+  "spec": {
+    "tool": "httpload",
+    "pattern": "fan-out-fan-in",
+    "endpoint": "fast",
+    "concurrency": 1000,
+    "tui": false,
+    "cancel_after_s": 5,
+    "group": "D_cancel",
+    "rep": 2,
+    "order": 113,
+    "run_id": "D113-fan-out-fan-in-fast-c1000-r2"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "fan-out-fan-in",
+    "-concurrency",
+    "1000",
+    "-duration",
+    "30s",
+    "-timeout",
+    "10s"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "fan-out-fan-in",
+    "-concurrency",
+    "1000",
+    "-duration",
+    "3s",
+    "-timeout",
+    "10s"
+  ],
+  "warmup_s": 3,
+  "measure_s": 30,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/fast"
+  },
+  "pty": null
+}

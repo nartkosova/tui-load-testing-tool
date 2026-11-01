@@ -1,0 +1,15 @@
+pattern: worker-pool
+concurrency: 1000
+requests: 88002
+responses: 87525
+errors: 477
+HTTP errors: 0
+canceled: 477
+duration: 5.202297672s
+requests/sec: 16915.99
+error rate: 0.54%
+HTTP error rate: 0.00%
+response bytes: 175050
+success latency: samples=87525 rejected=0 min=52µs avg=57.504157ms p50=37.343ms p95=266.495ms p99=424.959ms max=480.511ms
+HTTP error latency: unavailable (samples: 0, rejected: 0)
+failure latency: samples=477 rejected=0 min=11.464ms avg=32.350356ms p50=33.407ms p95=56.959ms p99=111.871ms max=274.431ms

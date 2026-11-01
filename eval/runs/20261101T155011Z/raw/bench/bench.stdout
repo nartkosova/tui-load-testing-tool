@@ -1,0 +1,116 @@
+goos: linux
+goarch: amd64
+pkg: github.com/nartkosova/tui-load-testing-tool/internal/load
+cpu: 12th Gen Intel(R) Core(TM) i5-1235U
+BenchmarkCollectorCountersOnly-4   	191029389	         6.293 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorCountersOnly-4   	190999110	         6.292 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorCountersOnly-4   	190976488	         6.295 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorCountersOnly-4   	191065605	         6.304 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorCountersOnly-4   	191347682	         6.285 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorWithLatency-4    	100000000	        12.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorWithLatency-4    	99849550	        12.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorWithLatency-4    	97421487	        12.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorWithLatency-4    	100000000	        11.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorWithLatency-4    	100000000	        12.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCollectorConstruction-4   	   24219	     51830 ns/op	  516930 B/op	      10 allocs/op
+BenchmarkCollectorConstruction-4   	   22959	     52659 ns/op	  516929 B/op	      10 allocs/op
+BenchmarkCollectorConstruction-4   	   22458	     53056 ns/op	  516929 B/op	      10 allocs/op
+BenchmarkCollectorConstruction-4   	   22735	     52999 ns/op	  516930 B/op	      10 allocs/op
+BenchmarkCollectorConstruction-4   	   22267	     53372 ns/op	  516929 B/op	      10 allocs/op
+BenchmarkCollectorSummary-4        	    1869	    561479 ns/op	 1110352 B/op	      19 allocs/op
+BenchmarkCollectorSummary-4        	    2050	    564929 ns/op	 1110352 B/op	      19 allocs/op
+BenchmarkCollectorSummary-4        	    2148	    561583 ns/op	 1110352 B/op	      19 allocs/op
+BenchmarkCollectorSummary-4        	    2270	    565950 ns/op	 1110352 B/op	      19 allocs/op
+BenchmarkCollectorSummary-4        	    2046	    566992 ns/op	 1110352 B/op	      19 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=10-4         	     346	   3441490 ns/op	       344.1 ns/request	  597039 B/op	      38 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=10-4         	     349	   3432027 ns/op	       343.2 ns/request	  596804 B/op	      38 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=10-4         	     348	   3446061 ns/op	       344.6 ns/request	  596839 B/op	      38 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=10-4         	     346	   3470964 ns/op	       347.1 ns/request	  596830 B/op	      38 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=10-4         	     348	   3471699 ns/op	       347.2 ns/request	  596806 B/op	      38 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=10-4      	     223	   5348448 ns/op	       534.8 ns/request	  598366 B/op	      58 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=10-4      	     224	   5339314 ns/op	       533.9 ns/request	  598296 B/op	      57 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=10-4      	     223	   5354046 ns/op	       535.4 ns/request	  598344 B/op	      58 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=10-4      	     224	   5351238 ns/op	       535.1 ns/request	  598319 B/op	      57 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=10-4      	     223	   5349928 ns/op	       535.0 ns/request	  598352 B/op	      58 allocs/op
+BenchmarkPatternOverhead/pipeline/c=10-4            	     260	   4590548 ns/op	       459.1 ns/request	  597516 B/op	      41 allocs/op
+BenchmarkPatternOverhead/pipeline/c=10-4            	     261	   4594794 ns/op	       459.5 ns/request	  597521 B/op	      41 allocs/op
+BenchmarkPatternOverhead/pipeline/c=10-4            	     259	   4601973 ns/op	       460.2 ns/request	  597543 B/op	      41 allocs/op
+BenchmarkPatternOverhead/pipeline/c=10-4            	     260	   4598898 ns/op	       459.9 ns/request	  597506 B/op	      41 allocs/op
+BenchmarkPatternOverhead/pipeline/c=10-4            	     261	   4604787 ns/op	       460.5 ns/request	  597532 B/op	      41 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=100-4        	     288	   4155388 ns/op	       415.5 ns/request	  609614 B/op	     137 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=100-4        	     290	   4146402 ns/op	       414.6 ns/request	  609392 B/op	     137 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=100-4        	     286	   4152397 ns/op	       415.2 ns/request	  609416 B/op	     137 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=100-4        	     289	   4134439 ns/op	       413.4 ns/request	  609402 B/op	     137 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=100-4        	     289	   4128006 ns/op	       412.8 ns/request	  609418 B/op	     137 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=100-4     	     249	   4790688 ns/op	       479.1 ns/request	  625025 B/op	     346 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=100-4     	     250	   4803183 ns/op	       480.3 ns/request	  624393 B/op	     341 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=100-4     	     250	   4759518 ns/op	       476.0 ns/request	  624551 B/op	     343 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=100-4     	     249	   4801794 ns/op	       480.2 ns/request	  624529 B/op	     342 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=100-4     	     250	   4789992 ns/op	       479.0 ns/request	  624451 B/op	     342 allocs/op
+BenchmarkPatternOverhead/pipeline/c=100-4           	     277	   4328892 ns/op	       432.9 ns/request	  615940 B/op	     142 allocs/op
+BenchmarkPatternOverhead/pipeline/c=100-4           	     276	   4321697 ns/op	       432.2 ns/request	  616184 B/op	     144 allocs/op
+BenchmarkPatternOverhead/pipeline/c=100-4           	     277	   4308661 ns/op	       430.9 ns/request	  615895 B/op	     142 allocs/op
+BenchmarkPatternOverhead/pipeline/c=100-4           	     278	   4302232 ns/op	       430.2 ns/request	  615999 B/op	     143 allocs/op
+BenchmarkPatternOverhead/pipeline/c=100-4           	     278	   4315237 ns/op	       431.5 ns/request	  616046 B/op	     143 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=1000-4       	     225	   5224471 ns/op	       522.4 ns/request	  753317 B/op	    1268 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=1000-4       	     228	   5259615 ns/op	       526.0 ns/request	  751096 B/op	    1261 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=1000-4       	     224	   5329850 ns/op	       533.0 ns/request	  750619 B/op	    1256 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=1000-4       	     229	   5184427 ns/op	       518.4 ns/request	  749338 B/op	    1245 allocs/op
+BenchmarkPatternOverhead/worker-pool/c=1000-4       	     231	   5156651 ns/op	       515.7 ns/request	  750215 B/op	    1253 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=1000-4    	     210	   5661952 ns/op	       566.2 ns/request	  968556 B/op	    3899 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=1000-4    	     210	   5702777 ns/op	       570.3 ns/request	  965338 B/op	    3887 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=1000-4    	     212	   5668849 ns/op	       566.9 ns/request	  963736 B/op	    3873 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=1000-4    	     207	   5761143 ns/op	       576.1 ns/request	  965323 B/op	    3887 allocs/op
+BenchmarkPatternOverhead/fan-out-fan-in/c=1000-4    	     210	   5730078 ns/op	       573.0 ns/request	  964723 B/op	    3881 allocs/op
+BenchmarkPatternOverhead/pipeline/c=1000-4          	     244	   4919490 ns/op	       491.9 ns/request	  823445 B/op	    1396 allocs/op
+BenchmarkPatternOverhead/pipeline/c=1000-4          	     244	   4862547 ns/op	       486.3 ns/request	  824019 B/op	    1402 allocs/op
+BenchmarkPatternOverhead/pipeline/c=1000-4          	     246	   4840946 ns/op	       484.1 ns/request	  824235 B/op	    1404 allocs/op
+BenchmarkPatternOverhead/pipeline/c=1000-4          	     243	   4926135 ns/op	       492.6 ns/request	  823850 B/op	    1400 allocs/op
+BenchmarkPatternOverhead/pipeline/c=1000-4          	     249	   4829069 ns/op	       482.9 ns/request	  824751 B/op	    1408 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=0s-4         	       8	 130444449 ns/op	     13044 ns/request	  620192 B/op	     231 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=0s-4         	       8	 129741257 ns/op	     12974 ns/request	  620194 B/op	     247 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=0s-4         	       8	 131591676 ns/op	     13159 ns/request	  618164 B/op	     229 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=0s-4         	       8	 130853722 ns/op	     13085 ns/request	  618892 B/op	     236 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=0s-4         	       8	 129550183 ns/op	     12955 ns/request	  618948 B/op	     236 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=0s-4      	       8	 132894069 ns/op	     13289 ns/request	  635992 B/op	     459 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=0s-4      	       8	 133004174 ns/op	     13300 ns/request	  634368 B/op	     445 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=0s-4      	       8	 133795159 ns/op	     13380 ns/request	  636356 B/op	     462 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=0s-4      	       8	 131503856 ns/op	     13150 ns/request	  635922 B/op	     458 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=0s-4      	       8	 133887872 ns/op	     13389 ns/request	  635936 B/op	     459 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=0s-4            	       9	 124507247 ns/op	     12451 ns/request	  624534 B/op	     233 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=0s-4            	       9	 127155353 ns/op	     12716 ns/request	  626687 B/op	     252 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=0s-4            	       8	 127627166 ns/op	     12763 ns/request	  625172 B/op	     239 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=0s-4            	       8	 128035033 ns/op	     12804 ns/request	  625242 B/op	     239 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=0s-4            	       8	 130838497 ns/op	     13084 ns/request	  625634 B/op	     243 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=20µs-4       	       6	 187640268 ns/op	     18764 ns/request	  618752 B/op	     235 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=20µs-4       	       6	 187932301 ns/op	     18793 ns/request	  619088 B/op	     238 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=20µs-4       	       6	 186875611 ns/op	     18688 ns/request	  618098 B/op	     229 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=20µs-4       	       6	 186498014 ns/op	     18650 ns/request	  618416 B/op	     232 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=20µs-4       	       6	 186884670 ns/op	     18688 ns/request	  619442 B/op	     241 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=20µs-4    	       6	 188440689 ns/op	     18844 ns/request	  637373 B/op	     471 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=20µs-4    	       6	 186240582 ns/op	     18624 ns/request	  634741 B/op	     448 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=20µs-4    	       6	 176675630 ns/op	     17668 ns/request	  636272 B/op	     462 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=20µs-4    	       6	 185404999 ns/op	     18540 ns/request	  636160 B/op	     461 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=20µs-4    	       6	 182287142 ns/op	     18229 ns/request	  636384 B/op	     463 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=20µs-4          	       5	 204160369 ns/op	     20416 ns/request	  625524 B/op	     242 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=20µs-4          	       5	 204053085 ns/op	     20405 ns/request	  626264 B/op	     249 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=20µs-4          	       5	 204083473 ns/op	     20408 ns/request	  625614 B/op	     243 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=20µs-4          	       5	 204115612 ns/op	     20412 ns/request	  624740 B/op	     235 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=20µs-4          	       5	 204053150 ns/op	     20405 ns/request	  627652 B/op	     261 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=100µs-4      	       4	 287543867 ns/op	     28754 ns/request	  619368 B/op	     240 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=100µs-4      	       4	 293282695 ns/op	     29328 ns/request	  621552 B/op	     260 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=100µs-4      	       4	 294315702 ns/op	     29432 ns/request	  625556 B/op	     295 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=100µs-4      	       4	 292037229 ns/op	     29204 ns/request	  625752 B/op	     297 allocs/op
+BenchmarkPatternProcessingCost/worker-pool/cost=100µs-4      	       4	 294192156 ns/op	     29419 ns/request	  623036 B/op	     273 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=100µs-4   	       4	 264183038 ns/op	     26418 ns/request	  639884 B/op	     494 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=100µs-4   	       4	 264818131 ns/op	     26482 ns/request	  636104 B/op	     460 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=100µs-4   	       4	 267475026 ns/op	     26748 ns/request	  635600 B/op	     456 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=100µs-4   	       4	 267782523 ns/op	     26778 ns/request	  636272 B/op	     462 allocs/op
+BenchmarkPatternProcessingCost/fan-out-fan-in/cost=100µs-4   	       4	 268485727 ns/op	     26849 ns/request	  637588 B/op	     473 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=100µs-4         	       1	1012692709 ns/op	    101269 ns/request	  624248 B/op	     231 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=100µs-4         	       1	1012925314 ns/op	    101293 ns/request	  624248 B/op	     231 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=100µs-4         	       1	1012673284 ns/op	    101267 ns/request	  624248 B/op	     231 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=100µs-4         	       1	1012920274 ns/op	    101292 ns/request	  624248 B/op	     231 allocs/op
+BenchmarkPatternProcessingCost/pipeline/cost=100µs-4         	       1	1012690428 ns/op	    101269 ns/request	  624920 B/op	     237 allocs/op
+PASS
+ok  	github.com/nartkosova/tui-load-testing-tool/internal/load	126.228s

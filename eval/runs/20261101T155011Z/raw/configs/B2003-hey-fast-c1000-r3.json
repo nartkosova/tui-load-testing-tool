@@ -1,0 +1,48 @@
+{
+  "run_id": "B2003-hey-fast-c1000-r3",
+  "spec": {
+    "tool": "hey",
+    "endpoint": "fast",
+    "concurrency": 1000,
+    "group": "B2_hey5s",
+    "rep": 3,
+    "order": 3,
+    "run_id": "B2003-hey-fast-c1000-r3"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "hey",
+    "-z",
+    "5s",
+    "-c",
+    "1000",
+    "-t",
+    "10",
+    "http://127.0.0.1:8099/fast"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "hey",
+    "-z",
+    "3s",
+    "-c",
+    "1000",
+    "-t",
+    "10",
+    "http://127.0.0.1:8099/fast"
+  ],
+  "warmup_s": 3,
+  "measure_s": 5,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/fast"
+  },
+  "pty": null
+}

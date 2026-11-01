@@ -1,0 +1,56 @@
+{
+  "run_id": "B088-wrk-fast-c1000-r1",
+  "spec": {
+    "tool": "wrk",
+    "endpoint": "fast",
+    "concurrency": 1000,
+    "group": "B_tools",
+    "rep": 1,
+    "order": 88,
+    "run_id": "B088-wrk-fast-c1000-r1"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "wrk",
+    "-t",
+    "4",
+    "-c",
+    "1000",
+    "-d",
+    "10s",
+    "--timeout",
+    "10s",
+    "-s",
+    "/home/nart/projekte/tui-load-testing-tool/eval/wrk_report.lua",
+    "http://127.0.0.1:8099/fast"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "wrk",
+    "-t",
+    "4",
+    "-c",
+    "1000",
+    "-d",
+    "3s",
+    "--timeout",
+    "10s",
+    "-s",
+    "/home/nart/projekte/tui-load-testing-tool/eval/wrk_report.lua",
+    "http://127.0.0.1:8099/fast"
+  ],
+  "warmup_s": 3,
+  "measure_s": 10,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/fast"
+  },
+  "pty": null
+}

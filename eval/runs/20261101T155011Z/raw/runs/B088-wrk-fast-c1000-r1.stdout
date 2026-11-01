@@ -1,0 +1,9 @@
+Running 10s test @ http://127.0.0.1:8099/fast
+  4 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.00ms    2.24ms  36.13ms   84.86%
+    Req/Sec    42.41k     5.67k   51.80k    58.08%
+  1670520 requests in 10.02s, 187.99MB read
+Requests/sec: 166739.58
+Transfer/sec:     18.76MB
+WRKJSON {"duration_us":10018737,"requests":1670520,"bytes":197121360,"connect":0,"read":0,"write":0,"status":0,"timeout":0,"min_us":21,"mean_us":6000.659,"p50_us":5729,"p95_us":9161,"p99_us":14875,"max_us":36132}

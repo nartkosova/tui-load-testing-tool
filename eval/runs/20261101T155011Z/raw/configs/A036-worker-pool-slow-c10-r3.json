@@ -1,0 +1,55 @@
+{
+  "run_id": "A036-worker-pool-slow-c10-r3",
+  "spec": {
+    "tool": "httpload",
+    "pattern": "worker-pool",
+    "endpoint": "slow",
+    "concurrency": 10,
+    "group": "A_patterns",
+    "rep": 3,
+    "order": 36,
+    "run_id": "A036-worker-pool-slow-c10-r3"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/slow",
+    "-pattern",
+    "worker-pool",
+    "-concurrency",
+    "10",
+    "-duration",
+    "10s",
+    "-timeout",
+    "10s"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/slow",
+    "-pattern",
+    "worker-pool",
+    "-concurrency",
+    "10",
+    "-duration",
+    "3s",
+    "-timeout",
+    "10s"
+  ],
+  "warmup_s": 3,
+  "measure_s": 10,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/slow"
+  },
+  "pty": null
+}

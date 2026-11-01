@@ -1,0 +1,15 @@
+pattern: fan-out-fan-in
+concurrency: 10
+requests: 2658
+responses: 2648
+errors: 10
+HTTP errors: 0
+canceled: 0
+duration: 3.000862812s
+requests/sec: 885.75
+error rate: 0.38%
+HTTP error rate: 0.00%
+response bytes: 5296
+success latency: samples=2648 rejected=0 min=10.176ms avg=11.308259ms p50=11.263ms p95=12.079ms p99=12.503ms max=15.263ms
+HTTP error latency: unavailable (samples: 0, rejected: 0)
+failure latency: samples=10 rejected=0 min=5.008ms avg=5.15ms p50=5.127ms p95=5.407ms p99=5.407ms max=5.407ms

@@ -1,0 +1,33 @@
+2026-11-01T16:22:06Z power ac_online=1 battery=Charging loadavg=1.10 0.85 0.94
+2026-11-01T16:22:06Z start http: timeout 18000 python3 eval/harness.py http --run-dir eval/runs/20261101T155011Z --groups A_patterns,B_tools,C_tui,D_cancel,E_sqlite
+[1/316] A000-pipeline-fast-c1000-r3 status=ok exit=0 rps=18155.458456304514 errs=294 took=30.0s elapsed=0.5min
+[2/316] A001-fan-out-fan-in-fast-c1000-r1 status=ok exit=0 rps=17573.811411998344 errs=266 took=30.0s elapsed=1.0min
+[3/316] A002-fan-out-fan-in-fast-c100-r5 status=ok exit=0 rps=25121.733580796663 errs=50 took=29.9s elapsed=1.5min
+[4/316] A003-fan-out-fan-in-slow-c100-r5 status=ok exit=0 rps=9016.413677139528 errs=89 took=29.9s elapsed=2.0min
+[5/316] A004-fan-out-fan-in-slow-c1000-r3 status=ok exit=0 rps=17928.190568352267 errs=344 took=30.0s elapsed=2.5min
+[6/316] A005-fan-out-fan-in-slow-c10-r3 status=ok exit=0 rps=866.9504082259259 errs=10 took=30.0s elapsed=3.0min
+[7/316] A006-worker-pool-slow-c500-r4 status=ok exit=0 rps=23461.149823410276 errs=339 took=30.0s elapsed=3.5min
+[8/316] A007-worker-pool-slow-c1000-r5 status=ok exit=0 rps=18002.995661021305 errs=565 took=30.0s elapsed=4.0min
+[9/316] A008-worker-pool-fast-c10-r1 status=ok exit=0 rps=46300.534491952785 errs=4 took=29.9s elapsed=4.5min
+[10/316] A009-fan-out-fan-in-fast-c10-r1 status=ok exit=0 rps=43464.2071381723 errs=6 took=29.9s elapsed=5.0min
+[11/316] A010-worker-pool-fast-c10-r4 status=ok exit=0 rps=46387.095522713316 errs=6 took=30.0s elapsed=5.5min
+[12/316] A011-pipeline-slow-c1000-r1 status=ok exit=0 rps=17781.305485477948 errs=759 took=30.0s elapsed=6.0min
+[13/316] A012-pipeline-slow-c100-r3 status=ok exit=0 rps=8999.783503544215 errs=83 took=29.9s elapsed=6.5min
+[14/316] A013-worker-pool-slow-c100-r2 status=ok exit=0 rps=9003.703793938304 errs=94 took=29.9s elapsed=7.0min
+[15/316] A014-fan-out-fan-in-fast-c1000-r3 status=ok exit=0 rps=17883.371369471413 errs=818 took=30.0s elapsed=7.5min
+[16/316] A015-worker-pool-slow-c10-r2 status=ok exit=0 rps=869.4696699417156 errs=10 took=29.9s elapsed=8.0min
+[17/316] A016-worker-pool-fast-c1000-r5 status=ok exit=0 rps=18143.113548436086 errs=689 took=30.0s elapsed=8.5min
+[18/316] A017-worker-pool-fast-c100-r1 status=ok exit=0 rps=24449.136907362263 errs=60 took=30.0s elapsed=9.0min
+[19/316] A018-worker-pool-slow-c100-r5 status=ok exit=0 rps=9024.834227184536 errs=99 took=30.0s elapsed=9.5min
+[20/316] A019-fan-out-fan-in-slow-c500-r2 status=ok exit=0 rps=23107.66029740854 errs=460 took=30.0s elapsed=10.0min
+[21/316] A020-worker-pool-fast-c500-r5 status=ok exit=0 rps=19627.86298110679 errs=328 took=30.0s elapsed=10.5min
+[22/316] A021-worker-pool-fast-c500-r2 status=ok exit=0 rps=19894.763219500834 errs=408 took=30.0s elapsed=11.0min
+[23/316] A022-pipeline-slow-c10-r3 status=ok exit=0 rps=865.4652564598318 errs=10 took=29.9s elapsed=11.5min
+[24/316] A023-worker-pool-slow-c10-r5 status=ok exit=0 rps=866.4646413109174 errs=10 took=29.9s elapsed=12.0min
+[25/316] A024-worker-pool-slow-c1000-r2 status=ok exit=0 rps=18740.800354262123 errs=254 took=30.0s elapsed=12.5min
+[26/316] A025-fan-out-fan-in-fast-c100-r2 status=ok exit=0 rps=24957.653575328393 errs=60 took=29.9s elapsed=13.0min
+[27/316] A026-fan-out-fan-in-slow-c500-r3 status=ok exit=0 rps=22101.702367025762 errs=301 took=30.0s elapsed=13.5min
+[28/316] A027-fan-out-fan-in-slow-c500-r1 status=ok exit=0 rps=21765.403198117227 errs=234 took=30.0s elapsed=14.0min
+[29/316] A028-fan-out-fan-in-fast-c500-r1 status=ok exit=0 rps=19440.170479094064 errs=196 took=30.0s elapsed=14.5min
+[30/316] A029-fan-out-fan-in-slow-c10-r5 status=ok exit=0 rps=868.4566641427278 errs=10 took=29.9s elapsed=15.0min
+[31/316] A030-pipeline-fast-c500-r4 status=ok exit=0 rps=19933.65562194182 errs=264 took=30.0s elapsed=15.5min

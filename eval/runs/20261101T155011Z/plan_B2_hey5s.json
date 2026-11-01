@@ -1,0 +1,60 @@
+{
+ "seed": 20261101,
+ "reps": 3,
+ "specs": [
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B2_hey5s",
+   "rep": 3,
+   "order": 0,
+   "run_id": "B2000-hey-fast-c100-r3"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B2_hey5s",
+   "rep": 2,
+   "order": 1,
+   "run_id": "B2001-hey-fast-c1000-r2"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B2_hey5s",
+   "rep": 1,
+   "order": 2,
+   "run_id": "B2002-hey-fast-c100-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B2_hey5s",
+   "rep": 3,
+   "order": 3,
+   "run_id": "B2003-hey-fast-c1000-r3"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 1000,
+   "group": "B2_hey5s",
+   "rep": 1,
+   "order": 4,
+   "run_id": "B2004-hey-fast-c1000-r1"
+  },
+  {
+   "tool": "hey",
+   "endpoint": "fast",
+   "concurrency": 100,
+   "group": "B2_hey5s",
+   "rep": 2,
+   "order": 5,
+   "run_id": "B2005-hey-fast-c100-r2"
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+  "run_id": "A031-pipeline-fast-c1000-r1",
+  "spec": {
+    "tool": "httpload",
+    "pattern": "pipeline",
+    "endpoint": "fast",
+    "concurrency": 1000,
+    "group": "A_patterns",
+    "rep": 1,
+    "order": 31,
+    "run_id": "A031-pipeline-fast-c1000-r1"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "pipeline",
+    "-concurrency",
+    "1000",
+    "-duration",
+    "10s",
+    "-timeout",
+    "10s"
+  ],
+  "env": {},
+  "warmup_argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/home/nart/projekte/tui-load-testing-tool/eval/runs/20261101T155011Z/bin/httpload",
+    "-url",
+    "http://127.0.0.1:8099/fast",
+    "-pattern",
+    "pipeline",
+    "-concurrency",
+    "1000",
+    "-duration",
+    "3s",
+    "-timeout",
+    "10s"
+  ],
+  "warmup_s": 3,
+  "measure_s": 10,
+  "target": {
+    "image": "httpload-eval-target:e402cc8",
+    "cpuset": "8-11",
+    "network": "host",
+    "url": "http://127.0.0.1:8099/fast"
+  },
+  "pty": null
+}
